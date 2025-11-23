@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TCU aprova contas do governo com ressalvas sobre gastos - Notícias de Política</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #f8f9fa; color: #333; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      border-bottom: 2px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo img {
+      height: 50px;
+      margin: 5px;
+      border-radius: 8px;
+    }
+
+    /* NAV DESKTOP */
+    nav { display: flex; align-items: center; gap: 20px; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li { position: relative; }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.3s;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    nav ul li a:hover { color: #0072ce; background: #f0f7ff; }
+
+    /* MENU HAMBURGUER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 1100;
+    }
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: #333;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+    .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active div:nth-child(2) { opacity: 0; }
+    .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .article-header {
+      margin-bottom: 30px;
+    }
+
+    .news-category {
+      display: inline-block;
+      background: #dc3545;
+      color: white;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .author-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .article-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content h2 {
+      font-size: 1.6rem;
+      margin: 30px 0 15px;
+      color: #1a1a1a;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #dc3545;
+      padding-left: 20px;
+      margin: 25px 0;
+      font-style: italic;
+      color: #555;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 40px 0;
+    }
+
+    .tag {
+      background: #f0f7ff;
+      color: #0072ce;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      background: #0072ce;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 40px;
+    }
+
+    .back-button:hover {
+      background: #0056a3;
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER */
+    .rbm-footer {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: white;
+        padding: 50px 20px 30px;
+        margin-top: 60px;
+        border-top: 5px solid #1e3a8a;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .footer-wave {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%231e3a8a"></path></svg>');
+        background-size: 1200px 100%;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    
+    .logo-img {
+        height: 60px;
+        width: auto;
+        filter: brightness(0) invert(1);
+    }
+    
+    .footer-slogan {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+    }
+    
+    .social-icon:hover {
+        background-color: #3b82f6;
+        transform: translateY(-3px);
+    }
+    
+    .footer-section h3 {
+        color: #3b82f6;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #3b82f6;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+    
+    .footer-links a:hover {
+        color: white;
+        padding-left: 5px;
+    }
+    
+    .footer-links a::before {
+        content: '▶';
+        color: #3b82f6;
+        margin-right: 8px;
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover::before {
+        margin-right: 12px;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ccc;
+    }
+    
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        background-color: #3b82f6;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+    }
+    
+    .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        background-color: #333;
+        color: white;
+    }
+    
+    .newsletter-input::placeholder {
+        color: #999;
+    }
+    
+    .newsletter-button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 0 20px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+    
+    .newsletter-button:hover {
+        background-color: #1e3a8a;
+    }
+    
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .copyright {
+        color: #999;
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-bottom-links a:hover {
+        color: #3b82f6;
+    }
+    
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        background: #fff;
+        width: 260px;
+        height: 100vh;
+        padding-top: 80px;
+        gap: 0;
+        transition: 0.4s ease-in-out;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+        overflow-y: auto;
+      }
+      nav ul.active { right: 0; }
+
+      nav ul li { width: 100%; border-bottom: 1px solid #eee; }
+      nav ul li a {
+        font-size: 18px;
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav ul li a:hover { background: #0072ce; color: #fff; }
+
+      .hamburger { display: flex; }
+      
+      .container {
+        margin: 20px auto;
+      }
+      
+      .article-title {
+        font-size: 1.8rem;
+      }
+      
+      .article-image {
+        height: 250px;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .footer-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+      }
+      
+      .footer-logo {
+          align-items: center;
+      }
+      
+      .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+      }
+      
+      .newsletter-form {
+          flex-direction: column;
+      }
+      
+      .newsletter-input {
+          border-radius: 4px;
+          margin-bottom: 10px;
+      }
+      
+      .newsletter-button {
+          border-radius: 4px;
+          padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html"><img src="../../01.svg" alt="Logo Notícias"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../../../../../index.html">Início</a></li>
+        <li><a href="../../politica.html">Política</a></li>
+        <li><a href="#">Opinião</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <div></div><div></div><div></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="../../politica.html" class="back-button">← Voltar para Notícias</a>
+    
+    <article>
+      <div class="article-header">
+        <span class="news-category">Política</span>
+        <h1 class="article-title">TCU aprova contas do governo com ressalvas sobre gastos</h1>
+        
+        <div class="article-meta">
+          <div class="meta-item">
+            <img src="imagens/authors/autor9.jpg" alt="Carolina Mendonça" class="author-img">
+            <div>
+              <strong>Carolina Mendonça</strong>
+              <div>Especialista em Controle Externo</div>
+            </div>
+          </div>
+          <div class="meta-item">
+            <span>📅 8 de Janeiro, 2025</span>
+          </div>
+          <div class="meta-item">
+            <span>⏱️ 4 min de leitura</span>
+          </div>
+        </div>
+      </div>
+      
+      <img src="tcu.webp" alt="TCU aprova contas do governo" class="article-image">
+      
+      <div class="article-content">
+        <p>O Tribunal de Contas da União (TCU) aprovou nesta quarta-feira as contas do governo federal referentes ao exercício de 2024, mas fez duras críticas e impôs condições para a regularidade das despesas públicas. A decisão foi tomada por maioria dos ministros, com votação de 6 a 3 pela aprovação com ressalvas.</p>
+        
+        <p>O relator do processo, ministro Bruno Dantas, destacou avanços na transparência dos gastos, mas apontou irregularidades em contratos de obras públicas, superfaturamento em licitações e fragilidades no controle de despesas com publicidade oficial. O valor total das contas analisadas soma R$ 5,2 trilhões.</p>
+        
+        <h2>Principais irregularidades apontadas</h2>
+        
+        <p>O TCU identificou problemas em várias áreas da administração pública:</p>
+        
+        <p><strong>Obras de infraestrutura:</strong> Superfaturamento em 15 contratos de rodovias federais, com sobrepreço estimado em R$ 280 milhões. O tribunal determinou abertura de processo de tomada de contas especial.</p>
+        
+        <p><strong>Saúde pública:</strong> Aquisição de medicamentos sem licitação durante a pandemia, com preços até 40% acima do mercado. O ministério terá que justificar a urgência das compras.</p>
+        
+        <p><strong>Publicidade oficial:</strong> Distribuição irregular de verbas publicitárias, com concentração em veículos aliados ao governo. O TCU exigiu critérios técnicos para futuras contratações.</p>
+        
+        <p><strong>Programas sociais:</strong> Falhas no cadastro de beneficiários do Bolsa Família, com indícios de inclusão irregular de 85 mil pessoas. O governo terá que refazer a triagem em 90 dias.</p>
+        
+        <blockquote>
+          "Aprovar as contas não significa concordar com tudo que foi feito. Identificamos graves irregularidades que exigem correção imediata e punição dos responsáveis. O governo tem o dever de prestar contas à sociedade", afirmou o ministro Bruno Dantas.
+        </blockquote>
+        
+        <h2>Condições impostas pelo TCU</h2>
+        
+        <p>Para a aprovação das contas, o tribunal estabeleceu várias condições:</p>
+        
+        <p><strong>Prazos para correções:</strong> O governo tem 60 dias para apresentar plano de ação com medidas corretivas para todas as irregularidades apontadas.</p>
+        
+        <p><strong>Prestação de contas:</strong> Ministérios com problemas graves terão que enviar relatórios trimestrais sobre a implementação das correções.</p>
+        
+        <p><strong>Responsabilização:</strong> Determinação de abertura de processos administrativos contra servidores envolvidos nas irregularidades identificadas.</p>
+        
+        <p><strong>Transparência:</strong> Publicação em portal oficial de todos os contratos questionados pelo tribunal.</p>
+        
+        <h2>Reação do governo</h2>
+        
+        <p>O Palácio do Planalto recebeu com cautela a decisão do TCU:</p>
+        
+        <p>O ministro da Controladoria-Geral da União (CGU), Vinícius Carvalho, afirmou que "o governo acata as determinações do TCU e já está trabalhando nas correções necessárias". Ele destacou que muitas irregularidades são herdadas de gestões anteriores.</p>
+        
+        <p>Já a Advocacia-Geral da União (AGU) analisa a possibilidade de recorrer de alguns pontos da decisão, considerados por assessores jurídicos como "excessivamente rigorosos".</p>
+        
+        <p>O presidente da República emitiu nota afirmando que "respeita a independência do TCU" e que determinou aos ministros "total cooperação com as investigações".</p>
+        
+        <h2>Impacto político</h2>
+        
+        <p>A decisão do TCU tem repercussões importantes no cenário político:</p>
+        
+        <p><strong>Oposição:</strong> Líderes de partidos de oposição comemoraram as ressalvas do TCU e prometem usar o relatório em comissões parlamentares de inquérito.</p>
+        
+        <p><strong>Base governista:</strong> Parlamentares da base aliada minimizaram as críticas, argumentando que a aprovação das contas demonstra que "não há irregularidades graves".</p>
+        
+        <p><strong>Mercado financeiro:</strong> Analistas econômicos avaliam que as ressalvas do TCU podem influenciar negativamente a percepção de risco do país, embora a aprovação final seja vista como positiva.</p>
+        
+        <h2>Contexto histórico</h2>
+        
+        <p>Esta é a primeira aprovação com ressalvas das contas governamentais desde 2020:</p>
+        
+        <p>Em 2023, o TCU aprovou as contas sem ressalvas significativas. Em 2022, houve reprovação por irregularidades em contratos emergenciais da pandemia. A tendência histórica mostra maior rigor do tribunal em anos eleitorais.</p>
+        
+        <p>Especialistas em direito administrativo destacam que o TCU tem ampliado seu papel de controle nos últimos anos, com decisões cada vez mais técnicas e menos políticas.</p>
+        
+        <h2>Próximos passos</h2>
+        
+        <p>O processo segue agora para o Congresso Nacional, onde será analisado pelas comissões mistas de Orçamento e Controle. A Câmara e o Senado podem acatar ou rejeitar as recomendações do TCU.</p>
+        
+        <p>Enquanto isso, o governo tem prazo até março para implementar as primeiras correções determinadas pelo tribunal. O TCU fará acompanhamento trimestral do cumprimento das condições.</p>
+        
+        <p>O ministro Bruno Dantas afirmou que, se o governo não cumprir as determinações, o TCU poderá tomar medidas mais duras, incluindo a suspensão de repasses para programas com irregularidades.</p>
+        
+        <p>Organizações da sociedade civil já se mobilizam para acompanhar a implementação das correções e pressionar por maior transparência nos gastos públicos.</p>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">TCU</span>
+        <span class="tag">Contas Públicas</span>
+        <span class="tag">Controle Externo</span>
+        <span class="tag">Gastos do Governo</span>
+        <span class="tag">Transparência</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="rbm-footer">
+    <div class="footer-wave"></div>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <div class="logo-container">
+                <img src="../../../../../imagens/logos/01.svg" alt="Logo Notícias" class="logo-img">
+            </div>
+            <p class="footer-slogan">Informação confiável sobre política brasileira</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">in</a>
+                <a href="#" class="social-icon">t</a>
+                <a href="#" class="social-icon">you</a>
+                <a href="#" class="social-icon">ig</a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Política</h3>
+            <ul class="footer-links">
+                <li><a href="../../politica.html">Política Nacional</a></li>
+                <li><a href="../../politica.html">Congresso</a></li>
+                <li><a href="../../politica.html">Eleições</a></li>
+                <li><a href="../../politica.html">Partidos</a></li>
+                <li><a href="../../politica.html">Política Externa</a></li>
+                <li><a href="../../politica.html">Justiça</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Institucional</h3>
+            <ul class="footer-links">
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Nossa História</a></li>
+                <li><a href="#">Equipe</a></li>
+                <li><a href="#">Trabalhe Conosco</a></li>
+                <li><a href="#">Ética Jornalística</a></li>
+                <li><a href="#">Publicidade</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span>(11) 3456-7890</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <span>contato@noticias.com.br</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span>Av. Paulista, 1000 - São Paulo/SP</span>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 25px;">Newsletter</h3>
+            <p style="color: #ccc; margin-bottom: 10px; font-size: 0.9rem;">Receba as notícias em primeira mão</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Seu e-mail">
+                <button type="submit" class="newsletter-button">Assinar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="copyright">
+            &copy; 2025 D'LA 20 - BR. Todos os direitos reservados.
+        </div>
+        <div class="footer-bottom-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Mapa do Site</a>
+        </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(el) {
+      el.classList.toggle("active");
+      document.querySelector("nav ul").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>

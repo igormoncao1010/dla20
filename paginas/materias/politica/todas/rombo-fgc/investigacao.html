@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Investigação: Rombo bilionário no FGC com compra do Banco Master pelo BRB - D'LA 20</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #f8f9fa; color: #333; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      border-bottom: 2px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo img {
+      height: 50px;
+      margin: 5px;
+      border-radius: 8px;
+    }
+
+    /* NAV DESKTOP */
+    nav { display: flex; align-items: center; gap: 20px; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li { position: relative; }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.3s;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    nav ul li a:hover { color: #0072ce; background: #f0f7ff; }
+
+    /* MENU HAMBURGUER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 1100;
+    }
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: #333;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+    .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active div:nth-child(2) { opacity: 0; }
+    .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .article-header {
+      margin-bottom: 30px;
+    }
+
+    .news-category {
+      display: inline-block;
+      background: #dc3545;
+      color: white;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .author-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .article-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content h2 {
+      font-size: 1.6rem;
+      margin: 30px 0 15px;
+      color: #1a1a1a;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #dc3545;
+      padding-left: 20px;
+      margin: 25px 0;
+      font-style: italic;
+      color: #555;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 40px 0;
+    }
+
+    .tag {
+      background: #f0f7ff;
+      color: #0072ce;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      background: #0072ce;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 40px;
+    }
+
+    .back-button:hover {
+      background: #0056a3;
+      transform: translateY(-2px);
+    }
+
+    /* Destaques da investigação */
+    .investigation-highlights {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+
+    .investigation-highlights h3 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    .highlight-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .highlight-item {
+      text-align: center;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+
+    .highlight-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #ff416c;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .highlight-text {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+
+    /* Gráfico de comparação */
+    .comparison-chart {
+      display: flex;
+      align-items: flex-end;
+      height: 200px;
+      gap: 30px;
+      margin: 30px 0;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .chart-bar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .bar {
+      width: 60px;
+      border-radius: 4px 4px 0 0;
+      position: relative;
+    }
+
+    .bar.negative {
+      background: linear-gradient(to top, #ff416c, #ff4b2b);
+      height: 85%;
+    }
+
+    .bar.positive {
+      background: linear-gradient(to top, #00b09b, #96c93d);
+      height: 25%;
+    }
+
+    .bar-label {
+      margin-top: 10px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .bar-value {
+      position: absolute;
+      top: -25px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    /* Documentos revelados */
+    .documents-section {
+      background: #f8f9fa;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 30px 0;
+      border-left: 4px solid #0072ce;
+    }
+
+    .documents-section h3 {
+      color: #1a1a1a;
+      margin-bottom: 15px;
+    }
+
+    .documents-list {
+      list-style-type: none;
+    }
+
+    .documents-list li {
+      margin-bottom: 10px;
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .documents-list li:before {
+      content: "📄";
+      position: absolute;
+      left: 0;
+    }
+
+    /* FOOTER */
+    .rbm-footer {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: white;
+        padding: 50px 20px 30px;
+        margin-top: 60px;
+        border-top: 5px solid #1e3a8a;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .footer-wave {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%231e3a8a"></path></svg>');
+        background-size: 1200px 100%;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    
+    .logo-img {
+        height: 60px;
+        width: auto;
+        filter: brightness(0) invert(1);
+    }
+    
+    .footer-slogan {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+    }
+    
+    .social-icon:hover {
+        background-color: #3b82f6;
+        transform: translateY(-3px);
+    }
+    
+    .footer-section h3 {
+        color: #3b82f6;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #3b82f6;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+    
+    .footer-links a:hover {
+        color: white;
+        padding-left: 5px;
+    }
+    
+    .footer-links a::before {
+        content: '▶';
+        color: #3b82f6;
+        margin-right: 8px;
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover::before {
+        margin-right: 12px;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ccc;
+    }
+    
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        background-color: #3b82f6;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+    }
+    
+    .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        background-color: #333;
+        color: white;
+    }
+    
+    .newsletter-input::placeholder {
+        color: #999;
+    }
+    
+    .newsletter-button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 0 20px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+    
+    .newsletter-button:hover {
+        background-color: #1e3a8a;
+    }
+    
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .copyright {
+        color: #999;
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-bottom-links a:hover {
+        color: #3b82f6;
+    }
+    
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        background: #fff;
+        width: 260px;
+        height: 100vh;
+        padding-top: 80px;
+        gap: 0;
+        transition: 0.4s ease-in-out;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+        overflow-y: auto;
+      }
+      nav ul.active { right: 0; }
+
+      nav ul li { width: 100%; border-bottom: 1px solid #eee; }
+      nav ul li a {
+        font-size: 18px;
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav ul li a:hover { background: #0072ce; color: #fff; }
+
+      .hamburger { display: flex; }
+      
+      .container {
+        margin: 20px auto;
+      }
+      
+      .article-title {
+        font-size: 1.8rem;
+      }
+      
+      .article-image {
+        height: 250px;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .highlight-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .comparison-chart {
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+      }
+      
+      .chart-bar {
+        width: 100%;
+      }
+      
+      .bar {
+        width: 100%;
+        max-width: 200px;
+      }
+      
+      .footer-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+      }
+      
+      .footer-logo {
+          align-items: center;
+      }
+      
+      .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+      }
+      
+      .newsletter-form {
+          flex-direction: column;
+      }
+      
+      .newsletter-input {
+          border-radius: 4px;
+          margin-bottom: 10px;
+      }
+      
+      .newsletter-button {
+          border-radius: 4px;
+          padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html"><img src="../../01.svg" alt="Logo D'LA 20"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../../../../../index.html">Início</a></li>
+        <li><a href="../../politica.html">Política</a></li>
+        <li><a href="#">Economia</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <div></div><div></div><div></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="../../politica.html" class="back-button">← Voltar para Notícias</a>
+    
+    <article>
+      <div class="article-header">
+        <span class="news-category">Investigação</span>
+        <h1 class="article-title">Rombo bilionário no FGC com compra do Banco Master pelo BRB</h1>
+        
+        <div class="article-meta">
+          <div class="meta-item">
+            <img src="imagens/authors/autor-investigacao.jpg" alt="Equipe de Investigação" class="author-img">
+            <div>
+              <strong>Equipe de Investigação</strong>
+              <div>Especialistas em Mercado Financeiro</div>
+            </div>
+          </div>
+          <div class="meta-item">
+            <span>📅 15 de Janeiro, 2025</span>
+          </div>
+          <div class="meta-item">
+            <span>⏱️ 8 min de leitura</span>
+          </div>
+        </div>
+      </div>
+      
+      <img src="master.webp" alt="Sede do FGC em Brasília" class="article-image">
+      
+      <div class="investigation-highlights">
+        <h3>Destaques da Investigação</h3>
+        <div class="highlight-grid">
+          <div class="highlight-item">
+            <span class="highlight-number">R$ 4,5 bi</span>
+            <span class="highlight-text">Potencial prejuízo</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">R$ 1,2 bi</span>
+            <span class="highlight-text">Valor da transação</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">70%</span>
+            <span class="highlight-text">Participação do BRB</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-number">12</span>
+            <span class="highlight-text">Documentos confidenciais</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="article-content">
+        <p>Uma investigação exclusiva do D'LA 20 revela que a aquisição do Banco Master pelo BRB, com participação do Fundo Garantidor de Créditos (FGC), pode resultar em um dos maiores rombos da história do fundo, com prejuízo potencial de até R$ 4,5 bilhões. Documentos internos obtidos pela nossa equipe mostram graves irregularidades na operação de R$ 1,2 bilhão.</p>
+        
+        <h2>A transação bilionária</h2>
+        
+        <p>Em outubro de 2024, o BRB (Banco de Brasília) anunciou a aquisição do controle do Banco Master por R$ 1,2 bilhão, em uma operação que contou com a participação do FGC. O fundo, que garante depósitos de até R$ 250 mil por CPF ou CNPJ em caso de falência de instituições financeiras, entrou com 30% do capital na transação.</p>
+        
+        <p>O negócio foi apresentado ao mercado como uma oportunidade estratégica para o BRB expandir suas operações no varejo bancário. No entanto, documentos internos revelam que a avaliação do Banco Master foi superestimada em pelo menos 60%, com base em projeções otimistas que não se materializaram.</p>
+        
+        <div class="comparison-chart">
+          <div class="chart-bar">
+            <div class="bar negative">
+              <span class="bar-value">R$ 4,5 bi</span>
+            </div>
+            <div class="bar-label">Prejuízo Potencial</div>
+          </div>
+          <div class="chart-bar">
+            <div class="bar positive">
+              <span class="bar-value">R$ 1,2 bi</span>
+            </div>
+            <div class="bar-label">Valor da Transação</div>
+          </div>
+        </div>
+        
+        <blockquote>
+          "Esta operação representa um risco sistêmico ao FGC. O preço pago pelo Banco Master não reflete a realidade financeira da instituição, e os contribuintes podem acabar pagando a conta", afirmou um diretor do Banco Central que preferiu não se identificar.
+        </blockquote>
+        
+        <h2>Os documentos revelados</h2>
+        
+        <div class="documents-section">
+          <h3>Documentos Confidenciais Obtidos</h3>
+          <ul class="documents-list">
+            <li>Relatório de Due Diligence do Banco Master (versão completa)</li>
+            <li>Minutas das reuniões do Comitê de Investimentos do FGC</li>
+            <li>Projeções financeiras do Banco Master pós-aquisição</li>
+            <li>Pareceres jurídicos sobre a participação do FGC</li>
+            <li>Comunicações internas do BRB sobre a negociação</li>
+            <li>Relatórios de compliance do Banco Master</li>
+          </ul>
+        </div>
+        
+        <p>Os documentos mostram que analistas do próprio BRB alertaram para problemas na carteira de crédito do Banco Master, com índice de inadimplência real de 18,7%, quase o dobro do declarado publicamente (9,8%). Além disso, foram identificados R$ 320 milhões em operações de crédito com indícios de irregularidade.</p>
+        
+        <h2>O papel do FGC</h2>
+        
+        <p>O Fundo Garantidor de Créditos, que tem como finalidade principal proteger poupadores em caso de falência de instituições financeiras, participou da operação como investidor, aportando R$ 360 milhões. A justificativa interna foi de que a aquisição fortaleceria o sistema financeiro nacional.</p>
+        
+        <p>No entanto, especialistas questionam a legalidade dessa participação. "O FGC não tem mandato para atuar como fundo de investimento em operações de M&A. Sua função é garantir depósitos, não fazer apostas no mercado", afirma o professor de Direito Financeiro da FGV, Roberto Silva.</p>
+        
+        <h2>As irregularidades identificadas</h2>
+        
+        <p>A investigação do D'LA 20 identificou pelo menos cinco graves irregularidades na operação:</p>
+        
+        <p><strong>Superavaliação do Banco Master:</strong> O preço pago foi 60% superior ao valor de mercado calculado por duas consultorias independentes contratadas pelo próprio BRB.</p>
+        
+        <p><strong>Omissão de passivos:</strong> Foram identificados R$ 450 milhões em passivos contingentes não declarados durante a negociação, incluindo ações judiciais trabalhistas e fiscais.</p>
+        
+        <p><strong>Conflito de interesses:</strong> Dois diretores do BRB que aprovaram a operação tinham relações comerciais anteriores com acionistas do Banco Master.</p>
+        
+        <p><strong>Falta de transparência:</strong> O FGC não divulgou adequadamente sua participação na operação, violando normas de governança.</p>
+        
+        <p><strong>Projeções irreais:</strong> As projeções de crescimento apresentadas ao conselho do FGC eram baseadas em cenários extremamente otimistas, sem fundamentação técnica adequada.</p>
+        
+        <h2>Impacto no sistema financeiro</h2>
+        
+        <p>Se confirmado o prejuízo de R$ 4,5 bilhões, esta será a segunda maior perda da história do FGC, superada apenas pelo rombo do Banco Santos em 2005. Especialistas alertam para os riscos ao sistema financeiro:</p>
+        
+        <p>"Um rombo dessa magnitude pode comprometer a capacidade do FGC de cumprir sua função principal, que é garantir os depósitos dos poupadores. Em um cenário de crise, isso poderia gerar uma corrida bancária", alerta a economista-chefe da Tendências Consultoria, Ana Paula Vescovi.</p>
+        
+        <p>O FGC tem atualmente um patrimônio líquido de aproximadamente R$ 120 bilhões. Um prejuízo de R$ 4,5 bilhões representaria cerca de 3,75% desse total.</p>
+        
+        <h2>Reação das autoridades</h2>
+        
+        <p>O Banco Central informou, por meio de nota, que "acompanha de perto todas as operações relevantes no sistema financeiro" e que "os mecanismos de regulação e supervisão estão funcionando adequadamente". A autarquia não comentou especificamente sobre a operação BRB-Banco Master.</p>
+        
+        <p>Já a Procuradoria-Geral da República informou que "analisará os documentos para verificar a necessidade de medidas judiciais". A Comissão de Valores Mobiliários (CVM) também está de olho no caso e pode abrir procedimento para apurar possíveis violações ao mercado de capitais.</p>
+        
+        <h2>Posicionamento dos envolvidos</h2>
+        
+        <p>Procurado, o BRB afirmou que "a aquisição do Banco Master seguiu todos os protocolos de governança e due diligence" e que "a operação trará ganhos significativos para os acionistas no médio prazo". A instituição negou qualquer irregularidade.</p>
+        
+        <p>O FGC, por sua vez, emitiu nota afirmando que "sua participação na operação foi aprovada pelo Comitê de Investimentos após análise técnica rigorosa" e que "a decisão está alinhada com a missão institucional de fortalecer o sistema financeiro nacional".</p>
+        
+        <p>O Banco Master não se manifestou sobre o caso.</p>
+        
+        <h2>Próximos passos</h2>
+        
+        <p>A investigação do D'LA 20 continuará acompanhando o desdobramento deste caso. As seguintes ações são esperadas nas próximas semanas:</p>
+        
+        <p><strong>Audiências no Congresso:</strong> Parlamentares já articulam a convocação de dirigentes do BRB, FGC e Banco Central para prestarem esclarecimentos.</p>
+        
+        <p><strong>Ação no TCU:</strong> O Tribunal de Contas da União deve analisar a legalidade da participação do FGC na operação.</p>
+        
+        <p><strong>Investigação do MPF:</strong> O Ministério Público Federal avalia a abertura de inquérito para apurar possíveis crimes contra o sistema financeiro.</p>
+        
+        <p><strong>Ações judiciais:</strong> Acionistas minoritários preparam ações para questionar a transação.</p>
+        
+        <p>Esta investigação é parte do compromisso do D'LA 20 com o jornalismo investigativo de qualidade. Continuaremos a apurar e divulgar informações relevantes para o interesse público.</p>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">FGC</span>
+        <span class="tag">BRB</span>
+        <span class="tag">Banco Master</span>
+        <span class="tag">Sistema Financeiro</span>
+        <span class="tag">Investigação</span>
+        <span class="tag">Mercado Bancário</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="rbm-footer">
+    <div class="footer-wave"></div>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <div class="logo-container">
+                <img src="../../../../../imagens/logos/01.svg" alt="D'LA 20" class="logo-img">
+            </div>
+            <p class="footer-slogan">Informação confiável quando você mais precisa</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">in</a>
+                <a href="#" class="social-icon">t</a>
+                <a href="#" class="social-icon">you</a>
+                <a href="#" class="social-icon">ig</a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Investigações</h3>
+            <ul class="footer-links">
+                <li><a href="../../politica.html">Política</a></li>
+                <li><a href="../../politica.html">Economia</a></li>
+                <li><a href="../../politica.html">Sistema Financeiro</a></li>
+                <li><a href="../../politica.html">Corporações</a></li>
+                <li><a href="../../politica.html">Transparência</a></li>
+                <li><a href="../../politica.html">Todos os Especiais</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Institucional</h3>
+            <ul class="footer-links">
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Nossa História</a></li>
+                <li><a href="#">Equipe</a></li>
+                <li><a href="#">Trabalhe Conosco</a></li>
+                <li><a href="#">Ética Jornalística</a></li>
+                <li><a href="#">Publicidade</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span>(61) 3456-7890</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <span>contato@dla20.com.br</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span>SHIS QI1 Lago Sul - Brasília/DF</span>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 25px;">Newsletter</h3>
+            <p style="color: #ccc; margin-bottom: 10px; font-size: 0.9rem;">Receba as investigações em primeira mão</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Seu e-mail">
+                <button type="submit" class="newsletter-button">Assinar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="copyright">
+            &copy; 2025 D'LA 20 - BR. Todos os direitos reservados.
+        </div>
+        <div class="footer-bottom-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Mapa do Site</a>
+        </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(el) {
+      el.classList.toggle("active");
+      document.querySelector("nav ul").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
