@@ -313,51 +313,185 @@
             gap: 2rem;
         }
 
+        /* RESPONSIVIDADE - CORREÇÕES APLICADAS */
         @media (max-width: 1200px) {
             .stream-layout {
                 grid-template-columns: 1fr;
             }
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
+            /* Container principal com margens adequadas */
+            .stream-container {
+                padding: 1rem;
+                width: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            /* Header mobile */
             .live-header {
                 padding: 1rem;
                 flex-direction: column;
                 gap: 1rem;
                 text-align: center;
+                width: 100%;
             }
 
             .rbm-brand {
                 flex-direction: column;
                 gap: 1rem;
+                width: 100%;
             }
 
             .rbm-logo {
                 height: 40px;
+                max-width: 100%;
             }
 
-            .stream-container {
-                padding: 1rem;
+            /* Player de vídeo dentro das margens */
+            .stream-player {
+                width: 100%;
+                margin: 0 auto 1.5rem;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .video-wrapper {
+                width: 100%;
+                padding-bottom: 56.25%; /* Mantém proporção 16:9 */
+            }
+
+            #liveVideo {
+                width: 100%;
+                height: 100%;
+                border-radius: 8px;
+            }
+
+            /* Overlay ajustado para mobile */
+            .stream-status {
+                top: 0.5rem;
+                left: 0.5rem;
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .stream-time {
+                top: 0.5rem;
+                right: 0.5rem;
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            /* Informações da stream */
+            .stream-info {
+                padding: 1.5rem;
+                margin-bottom: 1.5rem;
+                width: 100%;
             }
 
             .stream-title {
-                font-size: 1.5rem;
+                font-size: 1.4rem;
+                line-height: 1.3;
             }
 
             .stream-meta {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0.8rem;
+            }
+
+            .stream-description {
+                font-size: 0.9rem;
+                line-height: 1.5;
+            }
+
+            /* Chat mobile */
+            .chat-section {
+                padding: 1.5rem;
+                width: 100%;
             }
 
             .chat-messages {
                 height: 300px;
+                padding: 0.8rem;
+            }
+
+            .message {
+                gap: 0.6rem;
+            }
+
+            .user-avatar {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8rem;
+            }
+
+            .username {
+                font-size: 0.9rem;
+            }
+
+            .message-text {
+                font-size: 0.9rem;
+            }
+
+            .chat-input {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+
+            .chat-input input {
+                padding: 0.8rem;
+            }
+
+            .chat-input button {
+                padding: 0.8rem;
+                width: 100%;
             }
         }
 
         @media (max-width: 480px) {
+            .stream-container {
+                padding: 0.8rem;
+            }
+
             .rbm-logo {
                 height: 35px;
+            }
+
+            .stream-info {
+                padding: 1.2rem;
+            }
+
+            .stream-title {
+                font-size: 1.2rem;
+            }
+
+            .chat-section {
+                padding: 1.2rem;
+            }
+
+            .chat-messages {
+                height: 250px;
+            }
+
+            .stream-status,
+            .stream-time {
+                font-size: 0.7rem;
+                padding: 0.3rem 0.6rem;
+            }
+        }
+
+        /* Garantir que nada ultrapasse a largura da tela */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+            
+            .stream-container,
+            .stream-player,
+            .stream-info,
+            .chat-section {
+                max-width: 100%;
             }
         }
     </style>
