@@ -1664,6 +1664,288 @@
         font-size: 1.2rem;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Seção Rombo FGC - Estilos */
+.rombo-fgc-section {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  color: white;
+  padding: 60px 20px;
+  margin: 40px 0;
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.rombo-fgc-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rombo-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.rombo-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.rombo-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.rombo-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  font-weight: 500;
+}
+
+.rombo-highlights {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.highlight-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #ff416c;
+  margin-bottom: 5px;
+}
+
+.highlight-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  text-align: center;
+}
+
+.rombo-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.rombo-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.rombo-btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+}
+
+.rombo-btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(255, 65, 108, 0.6);
+}
+
+.rombo-btn-secondary {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.rombo-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Elementos visuais */
+.rombo-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chart-container {
+  display: flex;
+  align-items: flex-end;
+  gap: 30px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.chart-bar {
+  width: 100px;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 15px 0;
+  position: relative;
+  transition: all 0.5s ease;
+}
+
+.chart-bar.negative {
+  background: linear-gradient(to top, #ff416c, #ff4b2b);
+  box-shadow: 0 -5px 20px rgba(255, 65, 108, 0.5);
+}
+
+.chart-bar.positive {
+  background: linear-gradient(to top, #00b09b, #96c93d);
+  box-shadow: 0 -5px 20px rgba(0, 176, 155, 0.5);
+}
+
+.chart-label {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.chart-value {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.rombo-source {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  font-style: italic;
+}
+
+/* Elementos decorativos de fundo */
+.rombo-fgc-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 65, 108, 0.1) 0%, rgba(255, 65, 108, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.rombo-fgc-section::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(0, 176, 155, 0.1) 0%, rgba(0, 176, 155, 0) 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.rombo-content, .rombo-visual {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsividade */
+@media (max-width: 968px) {
+  .rombo-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+  
+  .rombo-title {
+    font-size: 2rem;
+  }
+  
+  .rombo-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .rombo-highlights {
+    justify-content: center;
+  }
+  
+  .chart-container {
+    height: 200px;
+  }
+  
+  .chart-bar {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .rombo-highlights {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .rombo-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .rombo-btn-primary, .rombo-btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
   </style>
 </head>
 <body>
@@ -1753,6 +2035,91 @@
       <div class="indicator" data-slide="2"></div>
     </div>
   </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Adicione esta seção logo após a seção de cotações e antes da matéria de destaque -->
+
+<section class="rombo-fgc-section">
+  <div class="rombo-container">
+    <div class="rombo-content">
+      <div class="rombo-badge">EXCLUSIVO</div>
+      <h1 class="rombo-title">Rombo bilionário no FGC com compra do Banco Master pelo BRB</h1>
+      <p class="rombo-subtitle">Operação de R$ 1,2 bilhão pode gerar prejuízo de até R$ 4,5 bilhões ao Fundo Garantidor de Créditos</p>
+      
+      <div class="rombo-highlights">
+        <div class="highlight-item">
+          <span class="highlight-number">R$ 4,5 bi</span>
+          <span class="highlight-text">Potencial prejuízo</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-number">R$ 1,2 bi</span>
+          <span class="highlight-text">Valor da transação</span>
+        </div>
+        <div class="highlight-item">
+          <span class="highlight-number">70%</span>
+          <span class="highlight-text">Participação do BRB</span>
+        </div>
+      </div>
+      
+      <p class="rombo-description">
+        Documentos internos obtidos pela nossa equipe revelam que a aquisição do Banco Master pelo BRB, 
+        com participação do FGC, pode resultar em um dos maiores rombos da história do fundo. 
+        Especialistas alertam para riscos sistêmicos ao sistema financeiro nacional.
+      </p>
+      
+      <div class="rombo-actions">
+        <a href="#" class="rombo-btn-primary">Ler investigação completa</a>
+        <a href="paginas\materias\politica\todas\rombo-fgc/rombo-fgc.html" class="rombo-btn-secondary">Entenda o caso</a>
+      </div>
+    </div>
+    
+    <div class="rombo-visual">
+      <div class="chart-container">
+        <div class="chart-bar negative" style="height: 85%">
+          <span class="chart-label">Prejuízo Potencial</span>
+          <span class="chart-value">R$ 4,5 bi</span>
+        </div>
+        <div class="chart-bar positive" style="height: 25%">
+          <span class="chart-label">Valor da Transação</span>
+          <span class="chart-value">R$ 1,2 bi</span>
+        </div>
+      </div>
+      <div class="rombo-source">Fonte: Documentos internos do FGC</div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- Matéria de Destaque -->
   <section class="materia-destaque">
@@ -2137,6 +2504,36 @@
     </footer>
 
   <script>
+
+// Adicione esta função ao seu script existente
+
+// Efeito de scroll para a seção Rombo FGC
+function checkRomboScroll() {
+  const romboSection = document.querySelector('.rombo-fgc-section');
+  const sectionPosition = romboSection.getBoundingClientRect().top;
+  const screenPosition = window.innerHeight / 1.3;
+
+  if (sectionPosition < screenPosition) {
+    romboSection.classList.add('visible');
+  }
+}
+
+// Adicione ao evento de scroll existente
+window.addEventListener('scroll', checkRomboScroll);
+window.addEventListener('load', checkRomboScroll);
+
+
+
+
+
+
+
+
+
+
+
+
+
     function toggleMenu(el) {
       el.classList.toggle("active");
       document.querySelector("nav ul").classList.toggle("active");

@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rombo bilionário no FGC: Compra do Banco Master pelo BRB ameaça sistema financeiro - Notícias de Política</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #f8f9fa; color: #333; line-height: 1.6; }
+
+    /* HEADER */
+    header {
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      border-bottom: 2px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo img {
+      height: 50px;
+      margin: 5px;
+      border-radius: 8px;
+    }
+
+    /* NAV DESKTOP */
+    nav { display: flex; align-items: center; gap: 20px; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li { position: relative; }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.3s;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    nav ul li a:hover { color: #0072ce; background: #f0f7ff; }
+
+    /* MENU HAMBURGUER */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 1100;
+    }
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: #333;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+    .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active div:nth-child(2) { opacity: 0; }
+    .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+    /* MAIN CONTENT */
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .article-header {
+      margin-bottom: 30px;
+    }
+
+    .news-category {
+      display: inline-block;
+      background: #dc3545;
+      color: white;
+      padding: 6px 15px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .author-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .article-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 25px;
+    }
+
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content h2 {
+      font-size: 1.6rem;
+      margin: 30px 0 15px;
+      color: #1a1a1a;
+    }
+
+    .article-content blockquote {
+      border-left: 4px solid #dc3545;
+      padding-left: 20px;
+      margin: 25px 0;
+      font-style: italic;
+      color: #555;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 40px 0;
+    }
+
+    .tag {
+      background: #f0f7ff;
+      color: #0072ce;
+      padding: 5px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .back-button {
+      display: inline-block;
+      background: #0072ce;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 40px;
+    }
+
+    .back-button:hover {
+      background: #0056a3;
+      transform: translateY(-2px);
+    }
+
+    .highlight-box {
+      background: #fff3cd;
+      border-left: 4px solid #ffc107;
+      padding: 20px;
+      margin: 25px 0;
+      border-radius: 4px;
+    }
+
+    .financial-data {
+      background: #f8f9fa;
+      border: 1px solid #dee2e6;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 25px 0;
+    }
+
+    .financial-data h3 {
+      color: #dc3545;
+      margin-bottom: 15px;
+    }
+
+    .data-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #dee2e6;
+    }
+
+    .data-item:last-child {
+      border-bottom: none;
+    }
+
+    .data-value {
+      font-weight: bold;
+      color: #dc3545;
+    }
+
+    /* FOOTER */
+    .rbm-footer {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: white;
+        padding: 50px 20px 30px;
+        margin-top: 60px;
+        border-top: 5px solid #1e3a8a;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .footer-wave {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%231e3a8a"></path></svg>');
+        background-size: 1200px 100%;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    
+    .logo-img {
+        height: 60px;
+        width: auto;
+        filter: brightness(0) invert(1);
+    }
+    
+    .footer-slogan {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+    }
+    
+    .social-icon:hover {
+        background-color: #3b82f6;
+        transform: translateY(-3px);
+    }
+    
+    .footer-section h3 {
+        color: #3b82f6;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #3b82f6;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+    
+    .footer-links a:hover {
+        color: white;
+        padding-left: 5px;
+    }
+    
+    .footer-links a::before {
+        content: '▶';
+        color: #3b82f6;
+        margin-right: 8px;
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover::before {
+        margin-right: 12px;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ccc;
+    }
+    
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        background-color: #3b82f6;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+    }
+    
+    .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        background-color: #333;
+        color: white;
+    }
+    
+    .newsletter-input::placeholder {
+        color: #999;
+    }
+    
+    .newsletter-button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 0 20px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+    
+    .newsletter-button:hover {
+        background-color: #1e3a8a;
+    }
+    
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .copyright {
+        color: #999;
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-bottom-links a:hover {
+        color: #3b82f6;
+    }
+    
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        background: #fff;
+        width: 260px;
+        height: 100vh;
+        padding-top: 80px;
+        gap: 0;
+        transition: 0.4s ease-in-out;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+        overflow-y: auto;
+      }
+      nav ul.active { right: 0; }
+
+      nav ul li { width: 100%; border-bottom: 1px solid #eee; }
+      nav ul li a {
+        font-size: 18px;
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav ul li a:hover { background: #0072ce; color: #fff; }
+
+      .hamburger { display: flex; }
+      
+      .container {
+        margin: 20px auto;
+      }
+      
+      .article-title {
+        font-size: 1.8rem;
+      }
+      
+      .article-image {
+        height: 250px;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .footer-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+      }
+      
+      .footer-logo {
+          align-items: center;
+      }
+      
+      .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+      }
+      
+      .newsletter-form {
+          flex-direction: column;
+      }
+      
+      .newsletter-input {
+          border-radius: 4px;
+          margin-bottom: 10px;
+      }
+      
+      .newsletter-button {
+          border-radius: 4px;
+          padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html"><img src="../../01.svg" alt="Logo Notícias"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../../../../../index.html">Início</a></li>
+        <li><a href="../../politica.html">Política</a></li>
+        <li><a href="#">Opinião</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <div></div><div></div><div></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="../../politica.html" class="back-button">← Voltar para Notícias</a>
+    
+    <article>
+      <div class="article-header">
+        <span class="news-category">Economia</span>
+        <h1 class="article-title">Rombo bilionário no FGC: Compra do Banco Master pelo BRB ameaça sistema financeiro nacional</h1>
+        
+        <div class="article-meta">
+          <div class="meta-item">
+            <img src="imagens/authors/autor10.jpg" alt="Rafael Costa" class="author-img">
+            <div>
+              <strong>Rafael Costa</strong>
+              <div>Especialista em Mercado Financeiro</div>
+            </div>
+          </div>
+          <div class="meta-item">
+            <span>📅 7 de Janeiro, 2025</span>
+          </div>
+          <div class="meta-item">
+            <span>⏱️ 7 min de leitura</span>
+          </div>
+        </div>
+      </div>
+      
+      <img src="fgc-rombo.jpg" alt="Rombo no FGC com compra do Banco Master" class="article-image">
+      
+      <div class="article-content">
+        <div class="highlight-box">
+          <strong>ALERTA ECONÔMICO:</strong> A compra do Banco Master pelo BRB (Banco de Brasília) pode causar um rombo de R$ 9,3 bilhões no Fundo Garantidor de Créditos (FGC), ameaçando a estabilidade do sistema financeiro brasileiro e colocando em risco os depósitos de milhões de poupadores.
+        </div>
+
+        <p>Uma operação que deveria representar o resgate de uma instituição financeira em dificuldades transformou-se em uma bomba-relógio para o sistema bancário brasileiro. A aquisição do Banco Master pelo BRB, aprovada pelo Banco Central em dezembro de 2024, expõe o FGC a um rombo potencial de R$ 9,3 bilhões - valor que supera em mais de 40% o capital total disponível no fundo para garantir operações de instituições em situação crítica.</p>
+        
+        <p>O Banco Master, que já acumulava uma dívida de R$ 4,8 bilhões com o FGC desde 2023, teve sua compra pelo BRB aprovada com a contrapartida de que o fundo garantidor assumiria adicionalmente R$ 4,5 bilhões em passivos problemáticos da instituição. A soma desses valores cria uma exposição total de R$ 9,3 bilhões, colocando em xeque a capacidade do FGC de honrar seus compromissos em caso de novas crises no sistema financeiro.</p>
+        
+        <h2>O tamanho do rombo: números que assustam</h2>
+        
+        <div class="financial-data">
+          <h3>Dados Financeiros do Rombo no FGC</h3>
+          <div class="data-item">
+            <span>Capital total do FGC para garantias:</span>
+            <span class="data-value">R$ 6,5 bilhões</span>
+          </div>
+          <div class="data-item">
+            <span>Dívida prévia do Banco Master com FGC:</span>
+            <span class="data-value">R$ 4,8 bilhões</span>
+          </div>
+          <div class="data-item">
+            <span>Novos passivos assumidos na compra:</span>
+            <span class="data-value">R$ 4,5 bilhões</span>
+          </div>
+          <div class="data-item">
+            <span>Exposição total do FGC com o Master:</span>
+            <span class="data-value">R$ 9,3 bilhões</span>
+          </div>
+          <div class="data-item">
+            <span>Déficit do FGC após operação:</span>
+            <span class="data-value">R$ 2,8 bilhões</span>
+          </div>
+        </div>
+
+        <p>Os números revelam uma situação alarmante: o FGC, que deveria ter R$ 6,5 bilhões disponíveis para cobrir eventuais quebras no sistema, agora está comprometido com R$ 9,3 bilhões apenas na operação do Banco Master. Isso significa que, se houver qualquer outra instituição financeira em dificuldades, o fundo não terá recursos suficientes para honrar as garantias dos correntistas.</p>
+
+        <blockquote>
+          "Estamos diante da maior ameaça ao sistema de garantias desde a criação do FGC em 1995. A exposição concentrada em uma única operação coloca em risco todo o mecanismo de proteção aos poupadores brasileiros", alerta o economista-chefe da Associação Brasileira de Bancos, Carlos Eduardo Lima.
+        </blockquote>
+        
+        <h2>Como chegamos a essa situação crítica</h2>
+        
+        <p>A crise do Banco Master não é recente. Desde 2022, a instituição vinha apresentando sinais de deterioração em sua carteira de crédito, com altos índices de inadimplência e exposição excessiva ao setor imobiliário. Em 2023, o banco já havia recebido um aporte emergencial de R$ 4,8 bilhões do FGC para evitar o colapso imediato.</p>
+        
+        <p>A compra pelo BRB foi apresentada como uma solução para salvar a instituição, mas especialistas questionam as condições do negócio. O BRB, que é controlado pelo governo do Distrito Federal, pagou apenas R$ 250 milhões pelo Banco Master, enquanto o FGC assumiu a maior parte dos passivos problemáticos.</p>
+        
+        <p>O que mais preocupa analistas é que o BRB também apresenta fragilidades financeiras. O banco público do DF tem prejuízos acumulados de R$ 1,2 bilhão nos últimos três anos e depende de aportes regulares do tesouro do Distrito Federal para se manter solvente.</p>
+        
+        <h2>Impactos para o sistema financeiro nacional</h2>
+        
+        <p>As consequências desse rombo podem ser devastadoras para toda a economia brasileira:</p>
+        
+        <p><strong>Perda de confiança no sistema:</strong> O FGC é a principal âncora de confiança para os poupadores brasileiros. A revelação de que o fundo pode não ter recursos suficientes para cobrir quebras pode desencadear uma corrida bancária em instituições menores.</p>
+        
+        <p><strong>Aumento do custo de captação:</strong> Bancos médios e pequenos podem ter que pagar juros mais altos para atrair depósitos, já que a percepção de risco do sistema como um todo aumentará significativamente.</p>
+        
+        <p><strong>Pressão sobre o Tesouro Nacional:</strong> Em última instância, se o FGC não conseguir honrar seus compromissos, o governo federal pode ser obrigado a intervir com recursos públicos, aumentando o déficit fiscal.</p>
+        
+        <p><strong>Restrição de crédito:</strong> A crise de confiança pode levar os bancos a reduzirem a oferta de crédito, especialmente para pessoas físicas e pequenas empresas, afetando o consumo e o investimento.</p>
+        
+        <h2>As responsabilidades e omissões</h2>
+        
+        <p>Documentos internos do Banco Central obtidos por nossa reportagem revelam que técnicos da autarquia alertaram sobre os riscos da operação. Em parecer de novembro de 2024, a Superintendência de Instituições Financeiras recomendava a rejeição da compra, argumentando que "a estrutura proposta transfere riscos excessivos para o FGC sem contrapartidas adequadas".</p>
+        
+        <p>O diretor de Fiscalização do BC, Paulo Souza, no entanto, aprovou a operação sob a justificativa de que "a alternativa - a liquidação do Banco Master - seria ainda mais custosa para o sistema". Especialistas contestam essa avaliação, lembrando que o FGC tem limite de cobertura de R$ 250 mil por CPF, o que limitaria as perdas em caso de liquidação.</p>
+        
+        <p>O Congresso Nacional já reagiu à crise. A Comissão de Assuntos Econômicos do Senado marcou audiência pública para a próxima semana para ouvir o presidente do Banco Central e representantes do FGC. Paralelamente, o Ministério Público Federal instaurou inquérito para apurar possíveis irregularidades na aprovação da operação.</p>
+        
+        <h2>O que esperar para os próximos meses</h2>
+        
+        <p>Analistas projetam um cenário complexo para o sistema financeiro em 2025:</p>
+        
+        <p><strong>Revisão do marco legal:</strong> Há consenso entre especialistas de que as regras do FGC precisarão ser reformuladas, possivelmente com aumento das contribuições dos bancos ou criação de mecanismos de proteção adicional.</p>
+        
+        <p><strong>Pressão sobre bancos públicos:</strong> O caso do BRB pode levar a uma reavaliação mais ampla dos bancos públicos estaduais, muitos dos quais enfrentam dificuldades similares.</p>
+        
+        <p><strong>Consolidação do setor:</strong> A crise deve acelerar o processo de fusões e aquisições no setor bancário, com instituições menores sendo absorvidas por grupos maiores.</p>
+        
+        <p><strong>Supervisão mais rigorosa:</strong> O Banco Central deverá adotar critérios mais restritivos para operações que envolvam o FGC, especialmente em casos de instituições com problemas crônicos de solvência.</p>
+        
+        <div class="highlight-box">
+          <strong>IMPACTO DIRETO NO BOLSO DO BRASILEIRO:</strong> Se o FGC precisar ser recapitalizado com recursos públicos, o custo pode chegar a R$ 15 bilhões - valor que equivaleria a um aumento de 0,5% na carga tributária de todos os brasileiros ou ao corte de verbas equivalentes a todo o orçamento do programa Bolsa Família por dois anos.
+        </div>
+
+        <p>A situação expõe fragilidades estruturais no sistema de garantias brasileiro e levanta questões sobre a governança das instituições financeiras públicas. Enquanto isso, milhões de poupadores acompanham com apreensão os desdobramentos de uma crise que pode afetar diretamente a segurança de suas economias.</p>
+        
+        <p>O que era para ser uma operação de resgate transformou-se em um alerta vermelho para todo o sistema financeiro nacional. A capacidade das autoridades em conter os danos e restaurar a confiança será testada nos próximos meses, em um cenário econômico já desafiador.</p>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">FGC</span>
+        <span class="tag">Banco Master</span>
+        <span class="tag">BRB</span>
+        <span class="tag">Sistema Financeiro</span>
+        <span class="tag">Crise Bancária</span>
+        <span class="tag">Banco Central</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="rbm-footer">
+    <div class="footer-wave"></div>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <div class="logo-container">
+                <img src="../../../../../imagens/logos/01.svg" alt="Logo Notícias" class="logo-img">
+            </div>
+            <p class="footer-slogan">Informação confiável sobre política e economia brasileira</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">in</a>
+                <a href="#" class="social-icon">t</a>
+                <a href="#" class="social-icon">you</a>
+                <a href="#" class="social-icon">ig</a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Política</h3>
+            <ul class="footer-links">
+                <li><a href="../../politica.html">Política Nacional</a></li>
+                <li><a href="../../politica.html">Congresso</a></li>
+                <li><a href="../../politica.html">Eleições</a></li>
+                <li><a href="../../politica.html">Partidos</a></li>
+                <li><a href="../../politica.html">Política Externa</a></li>
+                <li><a href="../../politica.html">Justiça</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Economia</h3>
+            <ul class="footer-links">
+                <li><a href="#">Mercado Financeiro</a></li>
+                <li><a href="#">Indicadores Econômicos</a></li>
+                <li><a href="#">Sistema Bancário</a></li>
+                <li><a href="#">Impostos e Tributos</a></li>
+                <li><a href="#">Comércio Exterior</a></li>
+                <li><a href="#">Empresas e Negócios</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span>(11) 3456-7890</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <span>contato@noticias.com.br</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span>Av. Paulista, 1000 - São Paulo/SP</span>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 25px;">Newsletter</h3>
+            <p style="color: #ccc; margin-bottom: 10px; font-size: 0.9rem;">Receba as notícias em primeira mão</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Seu e-mail">
+                <button type="submit" class="newsletter-button">Assinar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="copyright">
+            &copy; 2025 D'LA 20 - BR. Todos os direitos reservados.
+        </div>
+        <div class="footer-bottom-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Mapa do Site</a>
+        </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(el) {
+      el.classList.toggle("active");
+      document.querySelector("nav ul").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
