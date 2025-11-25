@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derrota de Daniel Noboa muda rumos da disputa política no Equador - D'LA 20</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            border-bottom: 2px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img {
+            height: 50px;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        nav { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+        }
+
+        nav ul { 
+            list-style: none; 
+            display: flex; 
+            gap: 20px; 
+        }
+
+        nav ul li { 
+            position: relative; 
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover { 
+            color: #0072ce; 
+            background: #f0f7ff; 
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1100;
+        }
+
+        .hamburger div {
+            width: 28px;
+            height: 3px;
+            background: #333;
+            transition: 0.4s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active div:nth-child(2) { opacity: 0; }
+        .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .back-button:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        /* Article Header */
+        .article-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 0 20px;
+        }
+
+        .news-category {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #2c3e50;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .article-subtitle {
+            font-size: 1.5rem;
+            color: #7f8c8d;
+            font-weight: 400;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.5;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            color: #7f8c8d;
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff6b35;
+        }
+
+        /* Main Layout */
+        .main-article {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 50px;
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .article-content {
+            padding: 50px;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+
+        .main-text {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .main-text p {
+            margin-bottom: 25px;
+        }
+
+        .main-text h2 {
+            font-size: 2rem;
+            margin: 40px 0 25px;
+            color: #2c3e50;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #ff6b35;
+        }
+
+        .main-text h3 {
+            font-size: 1.5rem;
+            margin: 35px 0 20px;
+            color: #34495e;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: linear-gradient(135deg, #ff6b35, #ff8e53);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Timeline */
+        .timeline {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 40px 0;
+            border-left: 5px solid #ff6b35;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: #ff6b35;
+            min-width: 120px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* Quote */
+        .quote-section {
+            background: #2c3e50;
+            color: white;
+            padding: 50px;
+            border-radius: 12px;
+            margin: 40px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            font-size: 100px;
+            color: rgba(255,255,255,0.1);
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            font-size: 1.6rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: #f8f9fa;
+            padding: 35px;
+            border-radius: 12px;
+        }
+
+        .sidebar-widget {
+            margin-bottom: 35px;
+        }
+
+        .sidebar-widget:last-child {
+            margin-bottom: 0;
+        }
+
+        .sidebar-widget h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff6b35;
+            font-size: 1.3rem;
+        }
+
+        .candidate-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .candidate-card:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .candidate-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ff6b35;
+        }
+
+        .candidate-info {
+            flex: 1;
+        }
+
+        .candidate-name {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .candidate-party {
+            color: #ff6b35;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .candidate-votes {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .analysis-list {
+            list-style: none;
+        }
+
+        .analysis-list li {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .analysis-list li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .analysis-icon {
+            width: 24px;
+            height: 24px;
+            background: #ff6b35;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Impact Section */
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .impact-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-top: 4px solid #ff6b35;
+        }
+
+        .impact-card h4 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Tags */
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 50px 0 30px;
+            justify-content: center;
+        }
+
+        .tag {
+            background: #ff6b35;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            background: #e55a2b;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .rbm-footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 50px 20px 30px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 15px;
+        }
+
+        .footer-slogan {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #0072ce;
+            transform: translateY(-3px);
+        }
+
+        .footer-section h3 {
+            color: #0072ce;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .article-title {
+                font-size: 2.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                flex-direction: column;
+                background: #fff;
+                width: 280px;
+                height: 100vh;
+                padding-top: 80px;
+                gap: 0;
+                transition: 0.4s;
+                box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+            }
+
+            nav ul.active { 
+                right: 0; 
+            }
+
+            nav ul li { 
+                width: 100%; 
+                border-bottom: 1px solid #eee; 
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 16px 25px;
+                border-radius: 0;
+            }
+
+            .hamburger { 
+                display: flex; 
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+
+            .article-header {
+                margin-bottom: 30px;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .featured-image {
+                height: 350px;
+            }
+
+            .article-content {
+                padding: 30px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+
+            .timeline {
+                padding: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .timeline-date {
+                min-width: auto;
+            }
+
+            .quote-section {
+                padding: 30px 25px;
+            }
+
+            .quote-text {
+                font-size: 1.3rem;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-title {
+                font-size: 1.8rem;
+            }
+
+            .article-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .featured-image {
+                height: 280px;
+            }
+
+            .article-content {
+                padding: 25px 20px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+
+            .candidate-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .back-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../../../../index.html">
+                <img src="01.svg" alt="Logo Notícias">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../../../../../index.html">Início</a></li>
+                <li><a href="../../politica.html">Política</a></li>
+                <li><a href="#">Eleições</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" onclick="toggleMenu(this)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../../politica.html" class="back-button">← Voltar para Notícias</a>
+        
+        <article>
+            <div class="article-header">
+                <span class="news-category">Eleições & Política</span>
+                <h1 class="article-title">Derrota de Daniel Noboa muda rumos da disputa política no Equador</h1>
+                <p class="article-subtitle">Resultado das urnas surpreende analistas e redefine cenário para as eleições presidenciais de 2025 no país andino</p>
+                
+                <div class="article-meta">
+                    <div class="meta-item">
+                        <img src="imagens/authors/autor7.jpg" alt="Isabela Cordero" class="author-img">
+                        <div>
+                            <strong>Isabela Cordero</strong>
+                            <div>Correspondente no Equador</div>
+                        </div>
+                    </div>
+                    <div class="meta-item">
+                        <span>📅 30 de Janeiro, 2025</span>
+                    </div>
+                    <div class="meta-item">
+                        <span>⏱️ 8 min de leitura</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="main-article">
+                <img src="../../imagens/local/07.png" alt="Cena eleitoral no Equador" class="featured-image">
+                
+                <div class="article-content">
+                    <div class="content-grid">
+                        <div class="main-text">
+                            <p>Quito - O cenário político equatoriano foi sacudido por um terremoto eleitoral: a derrota de Daniel Noboa, filho do ex-presidente Álvaro Noboa e principal favorito nas pesquisas, nas eleições legislativas deste domingo. O resultado inesperado redefine completamente a corrida presidencial de 2025 e coloca em xeque o projeto de continuísmo do governo atual.</p>
+                            
+                            <p>Com 95% das urnas apuradas, a coalizão de esquerda "Unidade pela Pátria" obteve 34% dos votos, seguida pelo movimento indígena Pachakutik com 28%, enquanto a aliança de Noboa ficou em terceiro lugar com apenas 22% - um resultado considerado catastrófico para quem liderava todas as pesquisas até uma semana antes da eleição.</p>
+
+                            <div class="stats-section">
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <div class="stat-number">34%</div>
+                                        <div class="stat-label">Unidade pela Pátria</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">28%</div>
+                                        <div class="stat-label">Pachakutik</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-number">22%</div>
+                                        <div class="stat-label">Aliança de Noboa</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2>O Que Significa Esta Derrota</h2>
+                            
+                            <p>A surpreendente derrota de Daniel Noboa representa mais do que um simples revés eleitoral. Analistas políticos veem neste resultado o fim de uma era na política equatoriana e o colapso do modelo de poder que dominou o país nas últimas duas décadas.</p>
+                            
+                            <p>"A eleição mostrou que o eleitorado equatoriano rejeitou claramente o projeto de continuidade do modelo econômico e político vigente", analisa o cientista político Carlos Andrade, da Universidade Central do Equador. "Noboa representava a manutenção do status quo, e os eleitores optaram por mudança."</p>
+
+                            <div class="timeline">
+                                <h3>Linha do Tempo da Crise Política</h3>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">Out 2024</div>
+                                    <div class="timeline-content">
+                                        <h4>Noboa Lidera Pesquisas</h4>
+                                        <p>Daniel Noboa aparece com 15 pontos de vantagem nas primeiras pesquisas eleitorais</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">Dez 2024</div>
+                                    <div class="timeline-content">
+                                        <h4>Escândalos de Corrupção</h4>
+                                        <p>Revelações sobre suposto desvio de recursos abalam campanha de Noboa</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">Jan 2025</div>
+                                    <div class="timeline-content">
+                                        <h4>Virada nas Pesquisas</h4>
+                                        <p>Esquerda recupera terreno após propostas econômicas de Noboa serem criticadas</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-date">28 Jan 2025</div>
+                                    <div class="timeline-content">
+                                        <h4>Derrota Eleitoral</h4>
+                                        <p>Resultado oficial confirma vitória da esquerda e colapso de Noboa</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2>Reconfiguração do Cenário Político</h2>
+                            
+                            <p>Com a derrota de Noboa, o campo político equatoriano se reconfigura completamente. A esquerda, fragmentada desde a saída de Rafael Correa, mostra sinais de reunificação. O movimento indígena, por sua vez, consolida-se como terceira força nacional com capacidade de influenciar qualquer governo.</p>
+                            
+                            <p>"Estamos diante de um novo equilíbrio de forças", explica a analista política Maria Fernanda Paz. "Nenhum bloco tem hegemonia, o que significa que o próximo governo terá que ser necessariamente de coalizão e negociação."</p>
+
+                            <div class="quote-section">
+                                <div class="quote-text">
+                                    "O povo equatoriano deixou claro que não quer mais o mesmo de sempre. Esta derrota é o fim de uma era e o início de um novo ciclo político no país."
+                                </div>
+                                <div class="quote-author">— Leonidas Iza, Líder do Movimento Indígena</div>
+                            </div>
+
+                            <h2>Impacto nas Eleições Presidenciais</h2>
+                            
+                            <p>As consequências imediatas se refletem na corrida presidencial de 2025. Com a base eleitoral de Noboa desmoronada, outros nomes da direita começam a emergir como alternativas. Simultaneamente, a esquerda vê uma oportunidade histórica de retornar ao poder após o interstício liberal.</p>
+
+                            <div class="impact-grid">
+                                <div class="impact-card">
+                                    <h4>🔴 Para a Esquerda</h4>
+                                    <p>Oportunidade de unificação em torno de um candidato único. Fortalecimento da base social e recuperação de credibilidade.</p>
+                                </div>
+                                <div class="impact-card">
+                                    <h4>🔵 Para a Direita</h4>
+                                    <p>Necessidade de renovação profunda. Busca por novos lideranças não associadas ao establishment político tradicional.</p>
+                                </div>
+                                <div class="impact-card">
+                                    <h4>🟢 Para os Indígenas</h4>
+                                    <p>Consolidação como ator político decisivo. Capacidade de influenciar agenda nacional e formar alianças estratégicas.</p>
+                                </div>
+                                <div class="impact-card">
+                                    <h4>⚫ Para o Centrão</h4>
+                                    <p>Espaço reduzido para manobras. Necessidade de definição ideológica clara para sobreviver politicamente.</p>
+                                </div>
+                            </div>
+
+                            <h2>Reações Internacionais</h2>
+                            
+                            <p>O resultado das eleições equatorianas foi acompanhado com atenção pelos governos da região. Enquanto Venezuela e Cuba saudaram a "vitória das forças progressistas", Estados Unidos e Colômbia mantiveram postura cautelosa, aguardando os desdobramentos políticos.</p>
+                            
+                            <p>O mercado financeiro reagiu com nervosismo à imprevisibilidade do novo cenário. O risco-país do Equador subiu 2,5 pontos e o dólar fechou em alta de 1,8% frente ao sucre, refletindo a incerteza dos investidores sobre as políticas econômicas do próximo governo.</p>
+                            
+                            <p>Os próximos meses serão decisivos para entender se esta eleição representou apenas um protesto pontual do eleitorado ou, de fato, uma mudança estrutural no panorama político equatoriano.</p>
+                        </div>
+
+                        <div class="sidebar">
+                            <div class="sidebar-widget">
+                                <h3>🏆 Candidatos em Destaque</h3>
+                                <div class="candidate-card">
+                                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Daniel Noboa" class="candidate-img">
+                                    <div class="candidate-info">
+                                        <div class="candidate-name">Daniel Noboa</div>
+                                        <div class="candidate-party">Ação Democrática Nacional</div>
+                                        <div class="candidate-votes">22% dos votos</div>
+                                    </div>
+                                </div>
+                                <div class="candidate-card">
+                                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Luisa González" class="candidate-img">
+                                    <div class="candidate-info">
+                                        <div class="candidate-name">Luisa González</div>
+                                        <div class="candidate-party">Unidade pela Pátria</div>
+                                        <div class="candidate-votes">34% dos votos</div>
+                                    </div>
+                                </div>
+                                <div class="candidate-card">
+                                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Leonidas Iza" class="candidate-img">
+                                    <div class="candidate-info">
+                                        <div class="candidate-name">Leonidas Iza</div>
+                                        <div class="candidate-party">Pachakutik</div>
+                                        <div class="candidate-votes">28% dos votos</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="sidebar-widget">
+                                <h3>📈 Análise dos Especialistas</h3>
+                                <ul class="analysis-list">
+                                    <li>
+                                        <div class="analysis-icon">💡</div>
+                                        <div>
+                                            <strong>Virada Eleitoral</strong>
+                                            <div>Mudança de último minuto surpreende analistas</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="analysis-icon">🗳️</div>
+                                        <div>
+                                            <strong>Voto Jovem</strong>
+                                            <div>Eleitores entre 18-30 anos foram decisivos</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="analysis-icon">🌎</div>
+                                        <div>
+                                            <strong>Impacto Regional</strong>
+                                            <div>Resultado influencia política latino-americana</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="analysis-icon">📊</div>
+                                        <div>
+                                            <strong>Pesquisas Erradas</strong>
+                                            <div>Institutos falharam em captar mudança de opinião</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div class="sidebar-widget">
+                                <h3>📋 Próximos Passos</h3>
+                                <ul class="analysis-list">
+                                    <li>
+                                        <div class="analysis-icon">🔄</div>
+                                        <div>Reorganização dos partidos políticos</div>
+                                    </li>
+                                    <li>
+                                        <div class="analysis-icon">🤝</div>
+                                        <div>Negociação por alianças eleitorais</div>
+                                    </li>
+                                    <li>
+                                        <div class="analysis-icon">🗣️</div>
+                                        <div>Definição de candidaturas presidenciais</div>
+                                    </li>
+                                    <li>
+                                        <div class="analysis-icon">📅</div>
+                                        <div>Preparação para eleições de 2025</div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="article-tags">
+                <span class="tag">Equador</span>
+                <span class="tag">Eleições</span>
+                <span class="tag">Daniel Noboa</span>
+                <span class="tag">Política</span>
+                <span class="tag">Esquerda</span>
+                <span class="tag">Movimento Indígena</span>
+                <span class="tag">América Latina</span>
+            </div>
+        </article>
+    </main>
+
+    <footer class="rbm-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="01.svg" alt="Logo Notícias">
+                <p class="footer-slogan">Cobertura completa das eleições na América Latina</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">you</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Política</h3>
+                <ul class="footer-links">
+                    <li><a href="../../politica.html">Nacional</a></li>
+                    <li><a href="#">Internacional</a></li>
+                    <li><a href="#">Eleições</a></li>
+                    <li><a href="#">Partidos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>América Latina</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Brasil</a></li>
+                    <li><a href="#">Argentina</a></li>
+                    <li><a href="#">Chile</a></li>
+                    <li><a href="#">Colômbia</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p style="color: #ccc; margin-bottom: 15px;">Receba análises políticas</p>
+                <form style="display: flex;">
+                    <input type="email" placeholder="Seu e-mail" style="flex: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                    <button type="submit" style="background: #0072ce; color: white; border: none; padding: 0 20px; border-radius: 0 4px 4px 0; cursor: pointer;">Assinar</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>© 2025 D'LA 20 - BR. Todos os direitos reservados.</div>
+            <div>
+                <a href="#" style="color: #999; text-decoration: none; margin-left: 15px;">Privacidade</a>
+                <a href="#" style="color: #999; text-decoration: none; margin-left: 15px;">Termos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(el) {
+            el.classList.toggle("active");
+            document.querySelector("nav ul").classList.toggle("active");
+        }
+
+        // Fechar menu ao clicar em links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+
+        // Fechar menu ao redimensionar para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('nav ul').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

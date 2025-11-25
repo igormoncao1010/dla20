@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paraguai questiona Lula por ação hacker da Abin - D'LA 20 Internacional</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #f8f9fa; color: #333; line-height: 1.6; }
+
+    /* HEADER ORIGINAL */
+    header {
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      border-bottom: 2px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo img {
+      height: 50px;
+      margin: 5px;
+      border-radius: 8px;
+    }
+
+    /* NAV DESKTOP ORIGINAL */
+    nav { display: flex; align-items: center; gap: 20px; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li { position: relative; }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.3s;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    nav ul li a:hover { color: #0072ce; background: #f0f7ff; }
+
+    /* MENU HAMBURGUER ORIGINAL */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 1100;
+    }
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: #333;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+    .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active div:nth-child(2) { opacity: 0; }
+    .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+    /* MAIN CONTENT - LAYOUT DIFERENTE */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .article-header {
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .news-category {
+      display: inline-block;
+      background: #6f42c1;
+      color: white;
+      padding: 8px 25px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .article-title {
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .article-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 150px;
+      height: 4px;
+      background: linear-gradient(90deg, #6f42c1, #0072ce);
+      border-radius: 2px;
+    }
+
+    .article-subtitle {
+      font-size: 1.4rem;
+      color: #666;
+      font-weight: 400;
+      max-width: 800px;
+      margin-bottom: 30px;
+      line-height: 1.5;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid #e9ecef;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .author-img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #6f42c1;
+    }
+
+    /* LAYOUT DE DUAS COLUNAS COM HEADER LARGO */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 350px;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .main-content {
+      grid-column: 1;
+    }
+
+    .sidebar {
+      grid-column: 2;
+    }
+
+    /* HERO IMAGE STYLE */
+    .hero-image {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .image-caption {
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      margin-top: -25px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+      padding: 0 20px;
+    }
+
+    /* CONTENT STYLES */
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+    }
+
+    .article-content p {
+      margin-bottom: 25px;
+      text-align: justify;
+    }
+
+    .article-content h2 {
+      font-size: 1.8rem;
+      margin: 45px 0 25px;
+      color: #1a1a1a;
+      padding-bottom: 12px;
+      border-bottom: 3px solid #6f42c1;
+      position: relative;
+    }
+
+    .article-content h2::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background: #0072ce;
+    }
+
+    .article-content h3 {
+      font-size: 1.4rem;
+      margin: 35px 0 18px;
+      color: #2c3e50;
+      padding-left: 15px;
+      border-left: 4px solid #6f42c1;
+    }
+
+    /* FEATURE BOXES */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+      margin: 35px 0;
+    }
+
+    .feature-box {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border-top: 4px solid #6f42c1;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box h4 {
+      color: #6f42c1;
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+
+    .timeline {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin: 35px 0;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border-left: 4px solid #0072ce;
+    }
+
+    .timeline-item {
+      display: flex;
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #e9ecef;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .timeline-date {
+      font-weight: 700;
+      color: #6f42c1;
+      min-width: 120px;
+      font-size: 1rem;
+    }
+
+    .timeline-content {
+      flex: 1;
+    }
+
+    .timeline-content h4 {
+      color: #1a1a1a;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    /* QUOTE STYLE */
+    .quote-section {
+      background: linear-gradient(135deg, #6f42c1, #0072ce);
+      color: white;
+      padding: 40px;
+      border-radius: 12px;
+      margin: 40px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-section::before {
+      content: '"';
+      position: absolute;
+      top: 20px;
+      left: 30px;
+      font-size: 120px;
+      color: rgba(255,255,255,0.1);
+      font-family: Georgia, serif;
+    }
+
+    .quote-text {
+      font-size: 1.4rem;
+      font-style: italic;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .quote-author {
+      font-weight: 600;
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* SIDEBAR STYLES */
+    .sidebar-widget {
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border-top: 4px solid #6f42c1;
+    }
+
+    .sidebar-widget h3 {
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #6f42c1;
+      font-size: 1.3rem;
+    }
+
+    .country-card {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .country-card:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .country-flag {
+      width: 50px;
+      height: 35px;
+      border-radius: 4px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    .country-info {
+      flex: 1;
+    }
+
+    .country-name {
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 5px;
+    }
+
+    .country-role {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .document-list {
+      list-style: none;
+    }
+
+    .document-list li {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .document-list li:last-child {
+      margin-bottom: 0;
+      border-bottom: none;
+    }
+
+    .document-list a {
+      color: #333;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: color 0.3s;
+    }
+
+    .document-list a:hover {
+      color: #6f42c1;
+    }
+
+    .doc-icon {
+      width: 20px;
+      height: 20px;
+      background: #6f42c1;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    /* TAGS */
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 50px 0 30px;
+    }
+
+    .tag {
+      background: linear-gradient(135deg, #6f42c1, #0072ce);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(111, 66, 193, 0.3);
+    }
+
+    .back-button {
+      display: inline-flex;
+      align-items: center;
+      background: #0072ce;
+      color: white;
+      padding: 14px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 15px rgba(0, 114, 206, 0.3);
+    }
+
+    .back-button:hover {
+      background: #0056a3;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0, 114, 206, 0.4);
+    }
+
+    /* FOOTER ORIGINAL */
+    .rbm-footer {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: white;
+        padding: 50px 20px 30px;
+        margin-top: 60px;
+        border-top: 5px solid #1e3a8a;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .footer-wave {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%231e3a8a"></path></svg>');
+        background-size: 1200px 100%;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    
+    .logo-img {
+        height: 60px;
+        width: auto;
+        filter: brightness(0) invert(1);
+    }
+    
+    .footer-slogan {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+    }
+    
+    .social-icon:hover {
+        background-color: #3b82f6;
+        transform: translateY(-3px);
+    }
+    
+    .footer-section h3 {
+        color: #3b82f6;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #3b82f6;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+    
+    .footer-links a:hover {
+        color: white;
+        padding-left: 5px;
+    }
+    
+    .footer-links a::before {
+        content: '▶';
+        color: #3b82f6;
+        margin-right: 8px;
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover::before {
+        margin-right: 12px;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ccc;
+    }
+    
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        background-color: #3b82f6;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+    }
+    
+    .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        background-color: #333;
+        color: white;
+    }
+    
+    .newsletter-input::placeholder {
+        color: #999;
+    }
+    
+    .newsletter-button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 0 20px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+    
+    .newsletter-button:hover {
+        background-color: #1e3a8a;
+    }
+    
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .copyright {
+        color: #999;
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-bottom-links a:hover {
+        color: #3b82f6;
+    }
+    
+    /* RESPONSIVIDADE */
+    @media (max-width: 1024px) {
+      .article-layout {
+        grid-template-columns: 1fr 300px;
+        gap: 40px;
+      }
+      
+      .article-title {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (max-width: 968px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      
+      .sidebar {
+        grid-column: 1;
+      }
+      
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .article-title {
+        font-size: 2.2rem;
+      }
+      
+      .hero-image {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        background: #fff;
+        width: 280px;
+        height: 100vh;
+        padding-top: 80px;
+        gap: 0;
+        transition: 0.4s ease-in-out;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+        overflow-y: auto;
+      }
+      
+      nav ul.active { right: 0; }
+
+      nav ul li { width: 100%; border-bottom: 1px solid #eee; }
+      nav ul li a {
+        font-size: 18px;
+        padding: 16px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav ul li a:hover { background: #0072ce; color: #fff; }
+
+      .hamburger { display: flex; }
+      
+      .container {
+        margin: 20px auto;
+        padding: 0 15px;
+      }
+      
+      .article-header {
+        margin-bottom: 30px;
+      }
+      
+      .article-title {
+        font-size: 1.9rem;
+        padding-bottom: 15px;
+      }
+      
+      .article-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      
+      .hero-image {
+        height: 300px;
+      }
+      
+      .article-content h2 {
+        font-size: 1.5rem;
+        margin: 35px 0 20px;
+      }
+      
+      .article-content h3 {
+        font-size: 1.2rem;
+        margin: 25px 0 15px;
+      }
+      
+      .quote-section {
+        padding: 30px 25px;
+      }
+      
+      .quote-text {
+        font-size: 1.2rem;
+      }
+      
+      .feature-box {
+        padding: 25px;
+      }
+      
+      .timeline {
+        padding: 25px;
+      }
+      
+      .timeline-item {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .timeline-date {
+        min-width: auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .article-title {
+        font-size: 1.7rem;
+      }
+      
+      .article-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .hero-image {
+        height: 250px;
+      }
+      
+      .quote-text {
+        font-size: 1.1rem;
+      }
+      
+      .feature-box {
+        padding: 20px;
+      }
+      
+      .sidebar-widget {
+        padding: 20px;
+      }
+      
+      .back-button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html"><img src="01.svg" alt="Logo Notícias"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../../../../../index.html">Início</a></li>
+        <li><a href="../../politica.html">Política</a></li>
+        <li><a href="#">Opinião</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <div></div><div></div><div></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="../../paginas/materias/internacional/internacional.html" class="back-button">← Voltar para Notícias Internacionais</a>
+    
+    <article>
+      <div class="article-header">
+        <span class="news-category">Relações Internacionais</span>
+        <h1 class="article-title">No Mercosul, presidente do Paraguai questiona Lula por ação hacker da Abin</h1>
+        <p class="article-subtitle">Tensão diplomática surge durante reunião do bloco após revelações sobre suposta espionagem brasileira contra autoridades paraguaias</p>
+        
+        <div class="article-meta">
+          <div class="meta-item">
+            <img src="imagens/authors/autor3.jpg" alt="Ana Beatriz Torres" class="author-img">
+            <div>
+              <strong>Ana Beatriz Torres</strong>
+              <div>Correspondente Diplomática</div>
+            </div>
+          </div>
+          <div class="meta-item">
+            <span>📅 22 de Janeiro, 2025</span>
+          </div>
+          <div class="meta-item">
+            <span>⏱️ 7 min de leitura</span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="article-layout">
+        <div class="main-content">
+          <img src="../../imagens/local/04.png" alt="Reunião do Mercosul com presidentes Lula e Santiago Peña" class="hero-image">
+          <p class="image-caption">Presidente paraguaio Santiago Peña durante reunião do Mercosul onde questionou o Brasil sobre suposta espionagem da Abin</p>
+          
+          <div class="article-content">
+            <p>Uma tensão diplomática inesperada marcou a reunião de cúpula do Mercosul nesta terça-feira, quando o presidente do Paraguai, Santiago Peña, questionou publicamente o presidente Luiz Inácio Lula da Silva sobre supostas ações de hackers da Agência Brasileira de Inteligência (Abin) contra autoridades paraguaias.</p>
+            
+            <p>O incidente ocorreu durante a sessão plenária do bloco em Assunção, quando Peña citou "evidências preocupantes" de que sistemas governamentais paraguaios teriam sido alvo de ciberataques originários do Brasil. A declaração pegou a delegação brasileira de surpresa e criou um clima de constrangimento entre os líderes regionais.</p>
+            
+            <div class="feature-grid">
+              <div class="feature-box">
+                <h4>🔍 O Caso Abin</h4>
+                <p>A Abin enfrenta investigações sobre uso de software de vigilância FirstMile para monitorar autoridades sem autorização judicial. Agora, o caso ganha dimensão internacional.</p>
+              </div>
+              <div class="feature-box">
+                <h4>🇵🇾 Posição Paraguai</h4>
+                <p>Peña exige explicações formais e garantias de que a prática não se repetirá. O país é strategic partner do Brasil na fronteira.</p>
+              </div>
+            </div>
+            
+            <h2>O Incidente Diplomático</h2>
+            
+            <p>Segundo relatos de diplomatas presentes na reunião, Santiago Peña interrompeu a agenda prevista para levantar o tema. "Não podemos ignorar relatórios técnicos que apontam para violações de soberania digital por parte de agências de um país irmão", afirmou o presidente paraguaio, dirigindo-se diretamente a Lula.</p>
+            
+            <p>Lula, por sua vez, respondeu que "o Brasil respeita a soberania de todos os países" e se comprometeu a "apurar rigorosamente qualquer denúncia". No entanto, evitou confirmar ou negar as acusações específicas, limitando-se a afirmar que "os órgãos de inteligência brasileiros atuam dentro da lei".</p>
+            
+            <div class="timeline">
+              <h3>Cronologia da Crise</h3>
+              <div class="timeline-item">
+                <div class="timeline-date">15/01/2025</div>
+                <div class="timeline-content">
+                  <h4>Vazamento de Documentos</h4>
+                  <p>Site paraguaio publica supostos relatórios da Abin sobre autoridades do país</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">18/01/2025</div>
+                <div class="timeline-content">
+                  <h4>Protesto Diplomático</h4>
+                  <p>Paraguai convoca embaixador brasileiro para explicações</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">20/01/2025</div>
+                <div class="timeline-content">
+                  <h4>Análise Técnica</h4>
+                  <p>Especialistas paraguaios confirmam origem brasileira dos ataques</p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">22/01/2025</div>
+                <div class="timeline-content">
+                  <h4>Confronto no Mercosul</h4>
+                  <p>Peña questiona Lula diretamente durante cúpula do bloco</p>
+                </div>
+              </div>
+            </div>
+            
+            <h2>Impacto nas Relações Bilaterais</h2>
+            
+            <p>O Brasil e o Paraguai mantêm uma relação estratégica que vai além do Mercosul. Os dois países são parceiros na Usina Hidrelétrica de Itaipu, a segunda maior do mundo, e compartilham uma extensa fronteira de 1.300 km que é vital para o comércio regional.</p>
+            
+            <p>Analistas diplomáticos alertam que a crise pode afetar negociações sensíveis, incluindo a revisão do Anexo C do Tratado de Itaipu, que define o valor da energia vendida pelo Paraguai ao Brasil. "Em um momento de já existentes tensões comerciais, esse incidente é particularmente delicado", avalia o embaixador Carlos Augusto Santos, especialista em relações Brasil-Paraguai.</p>
+            
+            <div class="quote-section">
+              <div class="quote-text">
+                "A confiança entre nações irmãs não pode ser comprometida por ações que violam os princípios mais básicos do direito internacional e da soberania nacional."
+              </div>
+              <div class="quote-author">— Santiago Peña, Presidente do Paraguai</div>
+            </div>
+            
+            <h2>Contexto da Abin</h2>
+            
+            <p>A Agência Brasileira de Inteligência vive seu pior momento desde as revelações sobre espionagem da NSA em 2013. Investigação do Ministério Público Federal aponta uso irregular do sistema FirstMile, que permite rastrear localização de celulares sem autorização judicial.</p>
+            
+            <p>Até o momento, as investigações concentravam-se em alvos domésticos, incluindo políticos, juízes e jornalistas brasileiros. A extensão das acusações para o plano internacional representa uma escalada significativa na crise da agência.</p>
+            
+            <h2>Reações Internacionais</h2>
+            
+            <p>Os demais países do Mercosul adotaram postura cautelosa. A Argentina, através de seu chanceler, defendeu "diálogo e transparência" entre os países-membros. O Uruguai manteve silêncio oficial, enquanto a Venezuela, que busca plena reintegração ao bloco, apoiou publicamente a posição brasileira.</p>
+            
+            <p>Organizações de direitos humanos e transparência acompanham o caso com preocupação. "Se confirmadas, essas práticas violam não apenas a soberania paraguaia, mas também acordos internacionais de direitos humanos", afirma Lucia Hernandez, diretora da Transparência Internacional para América Latina.</p>
+            
+            <h2>Próximos Passos</h2>
+            
+            <p>O governo brasileiro se comprometeu a criar uma comissão bilateral para investigar as acusações. Enquanto isso, o Congresso Nacional deve convocar o diretor-geral da Abin, Luiz Fernando Corrêa, para prestar esclarecimentos sobre a extensão internacional das operações da agência.</p>
+            
+            <p>No plano diplomático, especialistas recomendam ação rápida para evitar danos permanentes à relação bilateral. "O Brasil precisa ser transparente e cooperativo para preservar uma parceria estratégica de décadas", conclui o embaixador Santos.</p>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="sidebar-widget">
+            <h3>Envolvidos no Caso</h3>
+            <div class="country-card">
+              <img src="https://flagcdn.com/w40/br.png" alt="Bandeira do Brasil" class="country-flag">
+              <div class="country-info">
+                <div class="country-name">Luiz Inácio Lula da Silva</div>
+                <div class="country-role">Presidente do Brasil</div>
+              </div>
+            </div>
+            <div class="country-card">
+              <img src="https://flagcdn.com/w40/py.png" alt="Bandeira do Paraguai" class="country-flag">
+              <div class="country-info">
+                <div class="country-name">Santiago Peña</div>
+                <div class="country-role">Presidente do Paraguai</div>
+              </div>
+            </div>
+            <div class="country-card">
+              <img src="https://flagcdn.com/w40/br.png" alt="Bandeira do Brasil" class="country-flag">
+              <div class="country-info">
+                <div class="country-name">Luiz Fernando Corrêa</div>
+                <div class="country-role">Diretor da Abin</div>
+              </div>
+            </div>
+            <div class="country-card">
+              <img src="https://flagcdn.com/w40/py.png" alt="Bandeira do Paraguai" class="country-flag">
+              <div class="country-info">
+                <div class="country-name">Rubén Ramírez Lezcano</div>
+                <div class="country-role">Chanceler Paraguaio</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="sidebar-widget">
+            <h3>Documentos Relacionados</h3>
+            <ul class="document-list">
+              <li>
+                <a href="#">
+                  <span class="doc-icon">📄</span>
+                  <span>Relatório Técnico - Ciberataques</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="doc-icon">📄</span>
+                  <span>Tratado de Itaipu - Anexo C</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="doc-icon">📄</span>
+                  <span>Acordos de Segurança do Mercosul</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="doc-icon">📄</span>
+                  <span>Investigacao MPF sobre Abin</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="sidebar-widget">
+            <h3>Dados Bilaterais</h3>
+            <div class="country-card">
+              <div class="country-info">
+                <div class="country-name">Comércio Brasil-Paraguai</div>
+                <div class="country-role">US$ 5,2 bi (2024)</div>
+              </div>
+            </div>
+            <div class="country-card">
+              <div class="country-info">
+                <div class="country-name">Fronteira Comum</div>
+                <div class="country-role">1.365 km</div>
+              </div>
+            </div>
+            <div class="country-card">
+              <div class="country-info">
+                <div class="country-name">Itaipu Binacional</div>
+                <div class="country-role">50% Brasil - 50% Paraguai</div>
+              </div>
+            </div>
+            <div class="country-card">
+              <div class="country-info">
+                <div class="country-name">Brasileiros no Paraguai</div>
+                <div class="country-role">~350 mil pessoas</div>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">Paraguai</span>
+        <span class="tag">Brasil</span>
+        <span class="tag">Mercosul</span>
+        <span class="tag">Abin</span>
+        <span class="tag">Relações Internacionais</span>
+        <span class="tag">Espionagem</span>
+        <span class="tag">Lula</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="rbm-footer">
+    <div class="footer-wave"></div>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <div class="logo-container">
+                <img src="01.svg" alt="Logo Notícias" class="logo-img">
+            </div>
+            <p class="footer-slogan">Informação confiável sobre política brasileira</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">in</a>
+                <a href="#" class="social-icon">t</a>
+                <a href="#" class="social-icon">you</a>
+                <a href="#" class="social-icon">ig</a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Política</h3>
+            <ul class="footer-links">
+                <li><a href="../../politica.html">Política Nacional</a></li>
+                <li><a href="../../politica.html">Congresso</a></li>
+                <li><a href="../../politica.html">Eleições</a></li>
+                <li><a href="../../politica.html">Partidos</a></li>
+                <li><a href="../../politica.html">Política Externa</a></li>
+                <li><a href="../../politica.html">Justiça</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Institucional</h3>
+            <ul class="footer-links">
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Nossa História</a></li>
+                <li><a href="#">Equipe</a></li>
+                <li><a href="#">Trabalhe Conosco</a></li>
+                <li><a href="#">Ética Jornalística</a></li>
+                <li><a href="#">Publicidade</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span>(11) 3456-7890</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <span>contato@noticias.com.br</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span>Av. Paulista, 1000 - São Paulo/SP</span>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 25px;">Newsletter</h3>
+            <p style="color: #ccc; margin-bottom: 10px; font-size: 0.9rem;">Receba as notícias em primeira mão</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Seu e-mail">
+                <button type="submit" class="newsletter-button">Assinar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="copyright">
+            &copy; 2025 D'LA 20 - BR. Todos os direitos reservados.
+        </div>
+        <div class="footer-bottom-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Mapa do Site</a>
+        </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(el) {
+      el.classList.toggle("active");
+      document.querySelector("nav ul").classList.toggle("active");
+    }
+
+    // Fechar menu ao clicar em links (mobile)
+    document.querySelectorAll('nav ul li a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.hamburger').classList.remove('active');
+        document.querySelector('nav ul').classList.remove('active');
+      });
+    });
+
+    // Fechar menu ao redimensionar para desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) {
+        document.querySelector('.hamburger').classList.remove('active');
+        document.querySelector('nav ul').classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo presidente da Bolívia quer substituir socialismo por 'capitalismo para todos' - D'LA 20</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            border-bottom: 2px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img {
+            height: 50px;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        nav { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+        }
+
+        nav ul { 
+            list-style: none; 
+            display: flex; 
+            gap: 20px; 
+        }
+
+        nav ul li { 
+            position: relative; 
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover { 
+            color: #0072ce; 
+            background: #f0f7ff; 
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1100;
+        }
+
+        .hamburger div {
+            width: 28px;
+            height: 3px;
+            background: #333;
+            transition: 0.4s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active div:nth-child(2) { opacity: 0; }
+        .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .back-button:hover {
+            background: #c0392b;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            filter: brightness(0.8);
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 50px 40px 30px;
+        }
+
+        .news-category {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .article-title {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .article-subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.4;
+            max-width: 800px;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e74c3c;
+        }
+
+        /* Content Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 50px;
+            margin: 50px 0;
+        }
+
+        .main-content {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .article-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .article-content p {
+            margin-bottom: 25px;
+        }
+
+        .article-content h2 {
+            font-size: 2rem;
+            margin: 40px 0 25px;
+            color: #2c3e50;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #e74c3c;
+        }
+
+        .article-content h3 {
+            font-size: 1.5rem;
+            margin: 35px 0 20px;
+            color: #34495e;
+            padding-left: 15px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        /* Stats */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid #e74c3c;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #e74c3c;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        /* Feature Section */
+        .feature-section {
+            background: #f8f9fa;
+            padding: 40px;
+            margin: 40px 0;
+            border-radius: 12px;
+            border-left: 5px solid #e74c3c;
+        }
+
+        .feature-section h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 35px 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .comparison-table th {
+            background: #e74c3c;
+            color: white;
+            padding: 20px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .comparison-table td {
+            padding: 18px 20px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 45px;
+            border-radius: 12px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 100px;
+            color: rgba(255,255,255,0.1);
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            font-size: 1.6rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            border-top: 4px solid #e74c3c;
+        }
+
+        .sidebar-widget h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e74c3c;
+            font-size: 1.3rem;
+        }
+
+        .profile-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .profile-card:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .profile-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e74c3c;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-name {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        .profile-role {
+            color: #e74c3c;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .profile-party {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .timeline-vertical {
+            list-style: none;
+        }
+
+        .timeline-vertical li {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ecf0f1;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .timeline-vertical li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .timeline-vertical li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 10px;
+            height: 10px;
+            background: #e74c3c;
+            border-radius: 50%;
+        }
+
+        .timeline-year {
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 5px;
+            font-size: 1rem;
+        }
+
+        /* Tags */
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 50px 0 30px;
+            justify-content: center;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+        }
+
+        /* Footer */
+        .rbm-footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 50px 20px 30px;
+            margin-top: 60px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 15px;
+        }
+
+        .footer-slogan {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #0072ce;
+            transform: translateY(-3px);
+        }
+
+        .footer-section h3 {
+            color: #0072ce;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr 300px;
+                gap: 40px;
+            }
+            
+            .article-title {
+                font-size: 2.5rem;
+            }
+            
+            .stats-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .sidebar {
+                grid-column: 1;
+            }
+            
+            .article-title {
+                font-size: 2.2rem;
+            }
+            
+            .hero-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                flex-direction: column;
+                background: #fff;
+                width: 280px;
+                height: 100vh;
+                padding-top: 80px;
+                gap: 0;
+                transition: 0.4s;
+                box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+            }
+
+            nav ul.active { 
+                right: 0; 
+            }
+
+            nav ul li { 
+                width: 100%; 
+                border-bottom: 1px solid #eee; 
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 16px 25px;
+                border-radius: 0;
+            }
+
+            .hamburger { 
+                display: flex; 
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+
+            .hero-section {
+                margin-bottom: 30px;
+            }
+
+            .hero-content {
+                padding: 30px 25px 25px;
+            }
+
+            .article-title {
+                font-size: 1.9rem;
+            }
+
+            .article-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+
+            .main-content {
+                padding: 30px;
+            }
+
+            .article-content {
+                font-size: 1.1rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.7rem;
+                margin: 35px 0 20px;
+            }
+
+            .article-content h3 {
+                font-size: 1.3rem;
+                margin: 30px 0 18px;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .feature-section {
+                padding: 30px;
+                margin: 30px 0;
+            }
+
+            .quote-section {
+                padding: 30px 25px;
+            }
+
+            .quote-text {
+                font-size: 1.3rem;
+            }
+
+            .sidebar-widget {
+                padding: 25px;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .profile-img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-title {
+                font-size: 1.7rem;
+            }
+
+            .article-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-image {
+                height: 300px;
+            }
+
+            .hero-content {
+                padding: 25px 20px 20px;
+            }
+
+            .stat-card {
+                padding: 25px;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 15px;
+            }
+
+            .back-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../../../../index.html">
+                <img src="01.svg" alt="Logo Notícias">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../../../../../index.html">Início</a></li>
+                <li><a href="../../politica.html">Política</a></li>
+                <li><a href="#">Economia</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" onclick="toggleMenu(this)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../../paginas/materias/internacional/internacional.html" class="back-button">← Voltar para Notícias</a>
+        
+        <article>
+            <div class="hero-section">
+                <img src="../../imagens/local/05.png" alt="Novo presidente da Bolívia discursando" class="hero-image">
+                <div class="hero-content">
+                    <span class="news-category">Política & Economia</span>
+                    <h1 class="article-title">Quem é novo presidente da Bolívia, que quer substituir socialismo por 'capitalismo para todos'?</h1>
+                    <p class="article-subtitle">Marco Antonio Ponce assume prometendo revolução econômica após 18 anos de governos socialistas no país andino</p>
+                    
+                    <div class="article-meta">
+                        <div class="meta-item">
+                            <img src="imagens/authors/autor5.jpg" alt="Diego Fernandez" class="author-img">
+                            <div>
+                                <strong>Diego Fernandez</strong>
+                                <div>Correspondente na Bolívia</div>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <span>📅 25 de Janeiro, 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>⏱️ 12 min de leitura</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <div class="article-content">
+                        <p>La Paz - Marco Antonio Ponce, um economista de 52 anos formado na Universidade de Chicago, tomou posse nesta segunda-feira como o 67º presidente da Bolívia, prometendo uma reviravolta histórica no modelo econômico do país após quase duas décadas de governos socialistas. Seu lema de campanha - "Capitalismo para Todos" - já causa polêmica e expectativa no país andino.</p>
+                        
+                        <p>Em discurso emocionante perante o Congresso, Ponce declarou: "Chegou a hora de substituir o capitalismo de compadres por um capitalismo verdadeiramente popular. O povo boliviano merece ser dono de seu próprio destino econômico". A fala foi recebida com aplausos efusivos de sua base e silêncio constrangedor da oposição.</p>
+                        
+                        <div class="stats-container">
+                            <div class="stat-card">
+                                <div class="stat-number">67%</div>
+                                <div class="stat-label">dos votos no 2º turno</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">18</div>
+                                <div class="stat-label">anos de governos socialistas</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">52</div>
+                                <div class="stat-label">anos de idade</div>
+                            </div>
+                        </div>
+                        
+                        <h2>Quem é Marco Antonio Ponce</h2>
+                        
+                        <p>Nascido em Santa Cruz de la Sierra, Ponce vem de uma família de classe média - seu pai era pequeno empresário no setor de transportes e sua mãe, professora. Formou-se em Economia na Universidad Privada de Santa Cruz antes de conseguir uma bolsa para mestrado na Universidade de Chicago, berço do pensamento econômico liberal.</p>
+                        
+                        <p>Antes da política, teve carreira bem-sucedida no setor privado, tendo sido diretor do Banco Económico Boliviano e consultor de organismos internacionais. Entrou na política em 2018 como ministro da Economia no governo transitório de Jeanine Áñez, onde ganhou notoriedade por suas medidas de austeridade.</p>
+                        
+                        <div class="feature-section">
+                            <h3>O que é "Capitalismo para Todos"</h3>
+                            <p>A proposta central de Ponce combina liberalismo econômico com programas sociais focalizados. Seu plano inclui privatização de empresas estatais deficitárias, mas com parte das ações sendo distribuídas para trabalhadores bolivianos. Também prevê criação de um fundo soberano com recursos do gás natural para financiar educação e saúde.</p>
+                            <p>"Não queremos um capitalismo selvagem, mas um capitalismo com rosto humano, onde cada boliviano possa ser um pequeno capitalista", explicou em entrevista exclusiva ao D'LA 20.</p>
+                        </div>
+                        
+                        <h2>Mudanças Imediatas</h2>
+                        
+                        <p>Nos primeiros dias de governo, Ponce já anunciou medidas concretas:</p>
+                        
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Área</th>
+                                    <th>Mudança Proposta</th>
+                                    <th>Impacto Esperado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Empresas Estatais</strong></td>
+                                    <td>Privatização parcial com ações para trabalhadores</td>
+                                    <td>Redução do déficit fiscal em 3% do PIB</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Moeda</strong></td>
+                                    <td>Flexibilização do câmbio e fim do controle de preços</td>
+                                    <td>Atração de investimentos estrangeiros</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Energia</strong></td>
+                                    <td>Novos contratos com empresas privadas no setor</td>
+                                    <td>Aumento da produção de gás em 25%</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Educação</strong></td>
+                                    <td>Vouchers educacionais e universidades privadas</td>
+                                    <td>Melhoria na qualidade do ensino</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h2>Desafios pela Frente</h2>
+                        
+                        <p>O novo presidente herda uma economia em crise: inflação em 8%, reservas internacionais em nível crítico e dependência excessiva do gás natural. Além disso, enfrenta uma oposição organizada do MAS (Movimento ao Socialismo), partido do ex-presidente Evo Morales, que ainda controla significativa parcela do Congresso.</p>
+                        
+                        <p>"Será preciso habilidade política extraordinária para governar com um Congresso dividido", analisa a cientista política Valeria Mendonza, da Universidad Mayor de San Andrés. "Ponce terá que negociar cada medida com uma oposição que o considera um traidor do projeto nacional".</p>
+                        
+                        <div class="quote-section">
+                            <div class="quote-text">
+                                "O modelo estatista esgotou-se. Precisamos de um novo contrato social onde o Estado não seja o patrão, mas o facilitador da iniciativa privada."
+                            </div>
+                            <div class="quote-author">— Marco Antonio Ponce, Presidente da Bolívia</div>
+                        </div>
+                        
+                        <h2>Reações Internacionais</h2>
+                        
+                        <p>Os mercados internacionais reagiram positivamente à posse de Ponce. O risco-país da Bolívia caiu 15% e a bolsa de valores local registrou alta recorde de 8% no primeiro dia de governo. No plano diplomático, however, as reações foram mistas.</p>
+                        
+                        <p>Enquanto Estados Unidos e União Europeia celebraram a mudança, governos de esquerda da região como Venezuela e Cuba expressaram "preocupação" com o que chamaram de "retrocesso neoliberal". O Brasil adotou postura cautelosa, com o Itamaraty declarando que "respeita a vontade democrática do povo boliviano".</p>
+                        
+                        <h2>Perspectivas para a Economia</h2>
+                        
+                        <p>Analistas econômicos projetam um ano difícil de transição, com possível recessão no curto prazo devido às medidas de ajuste. No médio prazo, however, a expectativa é de recuperação baseada em investimentos estrangeiros e aumento da produtividade.</p>
+                        
+                        <p>"A Bolívia tem potencial enorme em lithium, energia renovável e agricultura. Se Ponce conseguir criar o ambiente institucional adequado, o país pode se tornar um dos grandes emergentes da região", avalia o economista Roberto Silva, do Banco Interamericano de Desenvolvimento.</p>
+                        
+                        <p>Os próximos meses serão decisivos para saber se o "capitalismo para todos" será capaz de converter-se de slogan de campanha em realidade para os 12 milhões de bolivianos.</p>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Elenco Governamental</h3>
+                        <div class="profile-card">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Marco Ponce" class="profile-img">
+                            <div class="profile-info">
+                                <div class="profile-name">Marco Antonio Ponce</div>
+                                <div class="profile-role">Presidente da República</div>
+                                <div class="profile-party">Partido Democrata Cristão</div>
+                            </div>
+                        </div>
+                        <div class="profile-card">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Carla Fernandez" class="profile-img">
+                            <div class="profile-info">
+                                <div class="profile-name">Carla Fernandez</div>
+                                <div class="profile-role">Vice-Presidente</div>
+                                <div class="profile-party">Partido Democrata Cristão</div>
+                            </div>
+                        </div>
+                        <div class="profile-card">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Roberto Silva" class="profile-img">
+                            <div class="profile-info">
+                                <div class="profile-name">Roberto Silva</div>
+                                <div class="profile-role">Ministro da Economia</div>
+                                <div class="profile-party">Independente</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Cronologia Política</h3>
+                        <ul class="timeline-vertical">
+                            <li>
+                                <div class="timeline-year">2006-2019</div>
+                                <div class="timeline-content">Governo Evo Morales (MAS)</div>
+                            </li>
+                            <li>
+                                <div class="timeline-year">2019-2020</div>
+                                <div class="timeline-content">Governo transitório Jeanine Áñez</div>
+                            </li>
+                            <li>
+                                <div class="timeline-year">2020-2024</div>
+                                <div class="timeline-content">Governo Luis Arce (MAS)</div>
+                            </li>
+                            <li>
+                                <div class="timeline-year">2024</div>
+                                <div class="timeline-content">Ponce eleito presidente</div>
+                            </li>
+                            <li>
+                                <div class="timeline-year">2025</div>
+                                <div class="timeline-content">Posse e início das reformas</div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Indicadores Econômicos</h3>
+                        <div class="profile-card">
+                            <div class="profile-info">
+                                <div class="profile-name">PIB Boliviano</div>
+                                <div class="profile-role">US$ 44 bilhões (2024)</div>
+                            </div>
+                        </div>
+                        <div class="profile-card">
+                            <div class="profile-info">
+                                <div class="profile-name">Inflação</div>
+                                <div class="profile-role">8.2% (acumulada 12 meses)</div>
+                            </div>
+                        </div>
+                        <div class="profile-card">
+                            <div class="profile-info">
+                                <div class="profile-name">Reservas Internacionais</div>
+                                <div class="profile-role">US$ 3.5 bilhões</div>
+                            </div>
+                        </div>
+                        <div class="profile-card">
+                            <div class="profile-info">
+                                <div class="profile-name">Dívida Pública</div>
+                                <div class="profile-role">45% do PIB</div>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+            
+            <div class="article-tags">
+                <span class="tag">Bolívia</span>
+                <span class="tag">Marco Ponce</span>
+                <span class="tag">Economia</span>
+                <span class="tag">Capitalismo</span>
+                <span class="tag">Reformas</span>
+                <span class="tag">América Latina</span>
+                <span class="tag">Política</span>
+            </div>
+        </article>
+    </main>
+
+    <footer class="rbm-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="01.svg" alt="Logo Notícias">
+                <p class="footer-slogan">Informação confiável sobre política e economia</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">you</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Política</h3>
+                <ul class="footer-links">
+                    <li><a href="../../politica.html">Política Nacional</a></li>
+                    <li><a href="#">Internacional</a></li>
+                    <li><a href="#">Eleições</a></li>
+                    <li><a href="#">Partidos</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Economia</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Mercados</a></li>
+                    <li><a href="#">Indicadores</a></li>
+                    <li><a href="#">Empresas</a></li>
+                    <li><a href="#">Comércio</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p style="color: #ccc; margin-bottom: 15px;">Receba as últimas notícias</p>
+                <form style="display: flex;">
+                    <input type="email" placeholder="Seu e-mail" style="flex: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                    <button type="submit" style="background: #0072ce; color: white; border: none; padding: 0 20px; border-radius: 0 4px 4px 0; cursor: pointer;">Assinar</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>© 2025 D'LA 20 - BR. Todos os direitos reservados.</div>
+            <div>
+                <a href="#" style="color: #999; text-decoration: none; margin-left: 15px;">Privacidade</a>
+                <a href="#" style="color: #999; text-decoration: none; margin-left: 15px;">Termos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(el) {
+            el.classList.toggle("active");
+            document.querySelector("nav ul").classList.toggle("active");
+        }
+
+        // Fechar menu ao clicar em links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+
+        // Fechar menu ao redimensionar para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('nav ul').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

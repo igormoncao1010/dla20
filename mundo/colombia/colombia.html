@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onda de atentados na Colômbia revive fantasma da violência política - D'LA 20</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            width: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            border-bottom: 2px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo img {
+            height: 50px;
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        nav { 
+            display: flex; 
+            align-items: center; 
+            gap: 20px; 
+        }
+
+        nav ul { 
+            list-style: none; 
+            display: flex; 
+            gap: 20px; 
+        }
+
+        nav ul li { 
+            position: relative; 
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            transition: 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+
+        nav ul li a:hover { 
+            color: #0072ce; 
+            background: #f0f7ff; 
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1100;
+        }
+
+        .hamburger div {
+            width: 28px;
+            height: 3px;
+            background: #333;
+            transition: 0.4s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active div:nth-child(2) { opacity: 0; }
+        .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .back-button {
+            display: inline-block;
+            background: #8e44ad;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .back-button:hover {
+            background: #7d3c98;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            position: relative;
+            margin-bottom: 50px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            filter: brightness(0.7);
+        }
+
+        .hero-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            color: white;
+            padding: 60px 50px 40px;
+        }
+
+        .news-category {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .article-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .article-subtitle {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1.4;
+            max-width: 800px;
+            opacity: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .article-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            color: rgba(255,255,255,0.9);
+            font-size: 0.95rem;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .author-img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e74c3c;
+        }
+
+        /* Content Layout */
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 350px;
+            gap: 50px;
+            margin: 50px 0;
+        }
+
+        .main-content {
+            background: white;
+            padding: 45px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .article-content {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #2c3e50;
+        }
+
+        .article-content p {
+            margin-bottom: 28px;
+        }
+
+        .article-content h2 {
+            font-size: 2.1rem;
+            margin: 45px 0 25px;
+            color: #2c3e50;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #8e44ad;
+        }
+
+        .article-content h3 {
+            font-size: 1.6rem;
+            margin: 40px 0 20px;
+            color: #34495e;
+            padding-left: 18px;
+            border-left: 4px solid #8e44ad;
+        }
+
+        /* Alert Section */
+        .alert-section {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            padding: 35px;
+            border-radius: 10px;
+            margin: 40px 0;
+            border-left: 5px solid #2c3e50;
+        }
+
+        .alert-section h3 {
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-top: 4px solid #8e44ad;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #e74c3c;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        /* Timeline */
+        .timeline-section {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 12px;
+            margin: 45px 0;
+            border-left: 5px solid #8e44ad;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: #8e44ad;
+            min-width: 120px;
+            font-size: 1.1rem;
+        }
+
+        .timeline-content {
+            flex: 1;
+        }
+
+        .timeline-content h4 {
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        /* Map Section */
+        .map-section {
+            background: #2c3e50;
+            color: white;
+            padding: 45px;
+            border-radius: 12px;
+            margin: 45px 0;
+            text-align: center;
+        }
+
+        .map-placeholder {
+            background: #34495e;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 25px 0;
+            font-size: 1.2rem;
+            opacity: 0.8;
+        }
+
+        /* Quote */
+        .quote-section {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 45px;
+            border-radius: 12px;
+            margin: 45px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 35px;
+            font-size: 100px;
+            color: rgba(255,255,255,0.1);
+            font-family: Georgia, serif;
+        }
+
+        .quote-text {
+            font-size: 1.7rem;
+            font-style: italic;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .quote-author {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .sidebar-widget {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+            border-top: 4px solid #8e44ad;
+        }
+
+        .sidebar-widget h3 {
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #8e44ad;
+            font-size: 1.3rem;
+        }
+
+        .group-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .group-card:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .group-icon {
+            width: 50px;
+            height: 50px;
+            background: #8e44ad;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .group-info {
+            flex: 1;
+        }
+
+        .group-name {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .group-status {
+            color: #e74c3c;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .group-region {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+        }
+
+        .analysis-list {
+            list-style: none;
+        }
+
+        .analysis-list li {
+            margin-bottom: 18px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid #ecf0f1;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .analysis-list li:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .analysis-icon {
+            width: 28px;
+            height: 28px;
+            background: #8e44ad;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* Tags */
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin: 60px 0 40px;
+            justify-content: center;
+        }
+
+        .tag {
+            background: linear-gradient(135deg, #8e44ad, #9b59b6);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            transition: all 0.3s ease;
+        }
+
+        .tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(142, 68, 173, 0.3);
+        }
+
+        /* Footer */
+        .rbm-footer {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            padding: 50px 20px 30px;
+            margin-top: 80px;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 15px;
+        }
+
+        .footer-slogan {
+            color: #ccc;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: #0072ce;
+            transform: translateY(-3px);
+        }
+
+        .footer-section h3 {
+            color: #0072ce;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 1024px) {
+            .content-wrapper {
+                grid-template-columns: 1fr 300px;
+                gap: 40px;
+            }
+            
+            .article-title {
+                font-size: 2.8rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 968px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .sidebar {
+                grid-column: 1;
+            }
+            
+            .article-title {
+                font-size: 2.4rem;
+            }
+            
+            .hero-image {
+                height: 450px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                flex-direction: column;
+                background: #fff;
+                width: 280px;
+                height: 100vh;
+                padding-top: 80px;
+                gap: 0;
+                transition: 0.4s;
+                box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+            }
+
+            nav ul.active { 
+                right: 0; 
+            }
+
+            nav ul li { 
+                width: 100%; 
+                border-bottom: 1px solid #eee; 
+            }
+
+            nav ul li a {
+                display: block;
+                padding: 16px 25px;
+                border-radius: 0;
+            }
+
+            .hamburger { 
+                display: flex; 
+            }
+
+            .container {
+                margin: 20px auto;
+                padding: 0 15px;
+            }
+
+            .hero-section {
+                margin-bottom: 30px;
+            }
+
+            .hero-content {
+                padding: 40px 30px 30px;
+            }
+
+            .article-title {
+                font-size: 2rem;
+            }
+
+            .article-subtitle {
+                font-size: 1.3rem;
+            }
+
+            .article-meta {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .hero-image {
+                height: 380px;
+            }
+
+            .main-content {
+                padding: 35px 30px;
+            }
+
+            .article-content {
+                font-size: 1.1rem;
+            }
+
+            .article-content h2 {
+                font-size: 1.8rem;
+                margin: 40px 0 20px;
+            }
+
+            .article-content h3 {
+                font-size: 1.4rem;
+                margin: 35px 0 18px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .timeline-section {
+                padding: 30px;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .timeline-date {
+                min-width: auto;
+            }
+
+            .quote-section {
+                padding: 35px 30px;
+            }
+
+            .quote-text {
+                font-size: 1.4rem;
+            }
+
+            .sidebar-widget {
+                padding: 25px;
+            }
+
+            .map-placeholder {
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .article-title {
+                font-size: 1.8rem;
+            }
+
+            .article-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-image {
+                height: 320px;
+            }
+
+            .hero-content {
+                padding: 30px 25px 25px;
+            }
+
+            .main-content {
+                padding: 30px 25px;
+            }
+
+            .stat-card {
+                padding: 25px;
+            }
+
+            .stat-number {
+                font-size: 2.2rem;
+            }
+
+            .quote-text {
+                font-size: 1.2rem;
+            }
+
+            .group-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .back-button {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="../../../../../index.html">
+                <img src="01.svg" alt="Logo Notícias">
+            </a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="../../../../../index.html">Início</a></li>
+                <li><a href="../../politica.html">Política</a></li>
+                <li><a href="#">Segurança</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+
+        <div class="hamburger" onclick="toggleMenu(this)">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <a href="../../paginas/materias/internacional/internacional.html" class="back-button">← Voltar para Notícias</a>
+        
+        <article>
+            <div class="hero-section">
+                <img src="../../imagens/local/08.png" alt="Protestos e violência na Colômbia" class="hero-image">
+                <div class="hero-content">
+                    <span class="news-category">Segurança & Conflito</span>
+                    <h1 class="article-title">Onda de atentados na Colômbia revive fantasma da violência política.</h1>
+                    <p class="article-subtitle">Série de ataques coordenados em três cidades colombianas deixa pelo menos 14 mortos e reacende temores de retorno do conflito armado.</p>
+                    
+                    <div class="article-meta">
+                        <div class="meta-item">
+                            <img src="imagens/authors/autor8.jpg" alt="Carlos Ramirez" class="author-img">
+                            <div>
+                                <strong>Carlos Ramirez</strong>
+                                <div>Correspondente de Segurança</div>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <span>📅 2 de Fevereiro, 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <span>⏱️ 10 min de leitura</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="content-wrapper">
+                <div class="main-content">
+                    <div class="article-content">
+                        <p>Bogotá - Uma onda de violência sem precedentes nos últimos cinco anos atingiu a Colômbia nesta terça-feira, com uma série de atentados coordenados em Bogotá, Medellín e Cali que deixaram pelo menos 14 mortos e 47 feridos. Os ataques reacenderam o fantasma do conflito armado que parecia superado após a assinatura do acordo de paz com as FARC em 2016.</p>
+                        
+                        <p>Os episódios mais graves ocorreram em frente a um quartel do Exército em Bogotá, onde um carro-bomba explodiu durante a troca de guarda, e em um posto de polícia em Medellín, alvo de um ataque com granadas. As autoridades confirmaram que esta é a pior jornada de violência desde o início do governo do presidente Gustavo Petro.</p>
+
+                        <div class="alert-section">
+                            <h3>🚨 Situação Crítica</h3>
+                            <p>Forças de segurança estão em alerta máximo em todo o país. O governo decretou toque de recolher nas áreas mais afetadas e reforçou a presença militar nas principais cidades.</p>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">14</div>
+                                <div class="stat-label">Mortos Confirmados</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">47</div>
+                                <div class="stat-label">Feridos Hospitalizados</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Cidades Atingidas</div>
+                            </div>
+                        </div>
+                        
+                        <h2>Os Ataques Coordenados</h2>
+                        
+                        <p>Segundo o Ministério da Defesa, os ataques começaram às 6h30 da manhã em Bogotá, com a explosão de um carro-bomba em frente ao Quartel General do Comando Conjunto nº 2. Pouco depois, quase simultaneamente, ataques com granadas foram registrados em Medellín e Cali.</p>
+                        
+                        <p>"A coordenação e sincronização dos ataques indicam um planejamento sofisticado e recursos logísticos consideráveis", afirmou o general Ricardo Sánchez, comandante das Forças Militares. "Estamos diante de uma ofensiva bem organizada."</p>
+
+                        <div class="timeline-section">
+                            <h3>⏰ Cronologia dos Ataques</h3>
+                            <div class="timeline-item">
+                                <div class="timeline-date">06:30h</div>
+                                <div class="timeline-content">
+                                    <h4>Carro-Bomba em Bogotá</h4>
+                                    <p>Explosão em frente ao quartel do Comando Conjunto nº 2. 8 mortos e 22 feridos.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">06:45h</div>
+                                <div class="timeline-content">
+                                    <h4>Ataque em Medellín</h4>
+                                    <p>Granadas lançadas contra posto policial no bairro de Castilla. 4 mortos e 15 feridos.</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">07:15h</div>
+                                <div class="timeline-content">
+                                    <h4>Incidente em Cali</h4>
+                                    <p>Atentado contra patrulha militar no distrito de Aguablanca. 2 mortos e 10 feridos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h2>Autoria e Responsabilidade</h2>
+                        
+                        <p>Até o momento, nenhum grupo assumiu a autoria dos ataques, mas as autoridades trabalham com três hipóteses principais: dissidências das FARC que não aceitaram o acordo de paz, o Exército de Libertação Nacional (ELN), ou alguma nova aliança entre grupos criminosos.</p>
+                        
+                        <p>O presidente Gustavo Petro, em pronunciamento à nação, foi enfático: "Não permitiremos que grupos armados ilegais nos façam retroceder aos piores anos de nossa história. A resposta do Estado será firme e proporcional."</p>
+
+                        <div class="map-section">
+                            <h3>🗺️ Áreas Afetadas pelos Ataques</h3>
+                            <p>Os ataques ocorreram em regiões estratégicas de três das principais cidades colombianas</p>
+                            <div class="map-placeholder">
+                                Mapa das áreas afetadas na Colômbia
+                            </div>
+                            <p><small>Bogotá (Centro), Medellín (Noroeste) e Cali (Sudoeste) foram as cidades atingidas</small></p>
+                        </div>
+
+                        <div class="quote-section">
+                            <div class="quote-text">
+                                "Este é um ataque não apenas contra instituições, mas contra a própria democracia colombiana. Não descansaremos até levar os responsáveis à justiça."
+                            </div>
+                            <div class="quote-author">— Gustavo Petro, Presidente da Colômbia</div>
+                        </div>
+
+                        <h2>Contexto Político e Social</h2>
+                        
+                        <p>Os ataques ocorrem em um momento particularmente delicado para o governo Petro. O presidente, que chegou ao poder prometendo a "paz total", enfrenta crescentes críticas pelo aparente recrudescimento da violência armada.</p>
+                        
+                        <p>Analistas políticos veem os atentados como uma tentativa de desestabilizar o processo de diálogo que o governo mantém com grupos armados. "Estes ataques têm claramente um objetivo político: sabotar as negociações de paz e demonstrar que o Estado não controla o território", avalia a cientista política Camila Restrepo.</p>
+
+                        <h2>Reações Internacionais</h2>
+                        
+                        <p>A comunidade internacional reagiu com preocupação aos eventos na Colômbia. A ONU emitiu um comunicado condenando os ataques e oferecendo apoio nas investigações. Os Estados Unidos, principal aliado da Colômbia no combate ao narcotráfico, ofereceram assistência técnica e inteligência.</p>
+                        
+                        <p>Vizinhos como Brasil, Peru e Equador reforçaram a vigilância nas fronteiras com a Colômbia, temendo um possível transbordamento da violência.</p>
+                        
+                        <p>Os próximos dias serão cruciais para determinar a capacidade de resposta do Estado colombiano e o real impacto destes ataques no já frágil processo de paz do país.</p>
+                    </div>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>⚔️ Grupos em Atividade</h3>
+                        <div class="group-card">
+                            <div class="group-icon">F</div>
+                            <div class="group-info">
+                                <div class="group-name">Dissidências das FARC</div>
+                                <div class="group-status">Ativo - Alta Periculosidade</div>
+                                <div class="group-region">Nariño, Cauca, Guaviare</div>
+                            </div>
+                        </div>
+                        <div class="group-card">
+                            <div class="group-icon">E</div>
+                            <div class="group-info">
+                                <div class="group-name">ELN</div>
+                                <div class="group-status">Ativo - Em Negociação</div>
+                                <div class="group-region">Norte de Santander, Chocó</div>
+                            </div>
+                        </div>
+                        <div class="group-card">
+                            <div class="group-icon">C</div>
+                            <div class="group-info">
+                                <div class="group-name">Clan del Golfo</div>
+                                <div class="group-status">Ativo - Narcotráfico</div>
+                                <div class="group-region">Antioquia, Córdoba</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>📊 Impacto Imediato</h3>
+                        <ul class="analysis-list">
+                            <li>
+                                <div class="analysis-icon">🚫</div>
+                                <div>
+                                    <strong>Toque de Recolher</strong>
+                                    <div>Implementado em 12 municípios</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="analysis-icon">🛣️</div>
+                                <div>
+                                    <strong>Estradas Fechadas</strong>
+                                    <div>15 vias interditadas por segurança</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="analysis-icon">🏛️</div>
+                                <div>
+                                    <strong>Reunião de Emergência</strong>
+                                    <div>Conselho de Segurança convocado</div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="analysis-icon">🌎</div>
+                                <div>
+                                    <strong>Alerta Internacional</strong>
+                                    <div>EUA e UE emitem comunicados</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>🕵️ Investigação em Curso</h3>
+                        <ul class="analysis-list">
+                            <li>
+                                <div class="analysis-icon">🔍</div>
+                                <div>Fiscalía assume investigação principal</div>
+                            </li>
+                            <li>
+                                <div class="analysis-icon">📹</div>
+                                <div>Análise de câmeras de segurança</div>
+                            </li>
+                            <li>
+                                <div class="analysis-icon">📱</div>
+                                <div>Rastreamento de comunicações</div>
+                            </li>
+                            <li>
+                                <div class="analysis-icon">🚗</div>
+                                <div>Identificação do veículo explosivo</div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+            
+            <div class="article-tags">
+                <span class="tag">Colômbia</span>
+                <span class="tag">Violência</span>
+                <span class="tag">Atentados</span>
+                <span class="tag">Segurança</span>
+                <span class="tag">Conflito Armado</span>
+                <span class="tag">Gustavo Petro</span>
+                <span class="tag">América Latina</span>
+            </div>
+        </article>
+    </main>
+
+    <footer class="rbm-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="01.svg" alt="Logo Notícias">
+                <p class="footer-slogan">Cobertura de segurança e conflitos na América Latina</p>
+                <div class="social-icons">
+                    <a href="#" class="social-icon">f</a>
+                    <a href="#" class="social-icon">in</a>
+                    <a href="#" class="social-icon">t</a>
+                    <a href="#" class="social-icon">you</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Segurança</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Conflitos</a></li>
+                    <li><a href="#">Terrorismo</a></li>
+                    <li><a href="#">Inteligência</a></li>
+                    <li><a href="#">Forças Armadas</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>América Latina</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Colômbia</a></li>
+                    <li><a href="#">Venezuela</a></li>
+                    <li><a href="#">México</a></li>
+                    <li><a href="#">Brasil</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <p style="color: #ccc; margin-bottom: 15px;">Alertas de segurança</p>
+                <form style="display: flex;">
+                    <input type="email" placeholder="Seu e-mail" style="flex: 1; padding: 12px; border: none; border-radius: 4px 0 0 4px;">
+                    <button type="submit" style="background: #0072ce; color: white; border: none; padding: 0 20px; border-radius: 0 4px 4px 0; cursor: pointer;">Assinar</button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div>© 2025 D'LA 20 - BR. Todos os direitos reservados.</div>
+            <div>
+                <a href="#" style="color: #999; text-decoration: none; margin-left: 15px;">Privacidade</a>
+                <a href="#" style="color: #999; text-decoration: none; margin-left: 15px;">Termos</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu(el) {
+            el.classList.toggle("active");
+            document.querySelector("nav ul").classList.toggle("active");
+        }
+
+        // Fechar menu ao clicar em links
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('nav ul').classList.remove('active');
+            });
+        });
+
+        // Fechar menu ao redimensionar para desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                document.querySelector('.hamburger').classList.remove('active');
+                document.querySelector('nav ul').classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

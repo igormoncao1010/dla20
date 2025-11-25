@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Segurança vira tema central em eleição chilena - D'LA 20 Internacional</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+    body { background: #f0f2f5; color: #333; line-height: 1.7; }
+
+    /* HEADER ORIGINAL */
+    header {
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      border-bottom: 2px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo img {
+      height: 50px;
+      margin: 5px;
+      border-radius: 8px;
+    }
+
+    /* NAV DESKTOP ORIGINAL */
+    nav { display: flex; align-items: center; gap: 20px; }
+    nav ul { list-style: none; display: flex; gap: 20px; }
+    nav ul li { position: relative; }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 600;
+      transition: 0.3s;
+      padding: 8px 12px;
+      border-radius: 4px;
+    }
+    nav ul li a:hover { color: #0072ce; background: #f0f7ff; }
+
+    /* MENU HAMBURGUER ORIGINAL */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 6px;
+      z-index: 1100;
+    }
+    .hamburger div {
+      width: 28px;
+      height: 3px;
+      background: #333;
+      transition: 0.4s;
+      border-radius: 2px;
+    }
+    .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.active div:nth-child(2) { opacity: 0; }
+    .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+    /* MAIN CONTENT - NOVO LAYOUT */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .article-header {
+      margin-bottom: 30px;
+      text-align: center;
+      position: relative;
+    }
+
+    .news-category {
+      display: inline-block;
+      background: #dc3545;
+      color: white;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    .article-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 20px;
+    }
+
+    .article-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background: #0072ce;
+      border-radius: 2px;
+    }
+
+    .article-subtitle {
+      font-size: 1.3rem;
+      color: #666;
+      font-weight: 400;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.5;
+    }
+
+    .article-meta {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      color: #666;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .meta-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .author-img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #0072ce;
+    }
+
+    .article-image {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .image-caption {
+      text-align: center;
+      color: #666;
+      font-style: italic;
+      margin-top: -20px;
+      margin-bottom: 30px;
+      font-size: 0.9rem;
+    }
+
+    /* NOVO LAYOUT DE CONTEÚDO */
+    .article-content {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #333;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 40px;
+    }
+
+    .main-content {
+      grid-column: 1;
+    }
+
+    .sidebar {
+      grid-column: 2;
+    }
+
+    .article-content p {
+      margin-bottom: 20px;
+    }
+
+    .article-content h2 {
+      font-size: 1.6rem;
+      margin: 30px 0 15px;
+      color: #1a1a1a;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #0072ce;
+    }
+
+    .article-content h3 {
+      font-size: 1.3rem;
+      margin: 25px 0 12px;
+      color: #1a1a1a;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, #0072ce, #0056a3);
+      color: white;
+      padding: 25px;
+      border-radius: 8px;
+      margin: 25px 0;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .highlight-box h3 {
+      color: white;
+      margin-top: 0;
+      border-bottom: none;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin: 25px 0;
+    }
+
+    .stat-item {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      border: 1px solid #eee;
+    }
+
+    .stat-value {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #dc3545;
+      margin-bottom: 5px;
+    }
+
+    .stat-label {
+      font-size: 0.9rem;
+      color: #666;
+    }
+
+    .quote {
+      border-left: 4px solid #dc3545;
+      padding-left: 20px;
+      margin: 25px 0;
+      font-style: italic;
+      color: #555;
+    }
+
+    .quote-author {
+      text-align: right;
+      font-weight: 600;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .article-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 40px 0;
+    }
+
+    .tag {
+      background: #f0f7ff;
+      color: #0072ce;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .back-button {
+      display: inline-block;
+      background: #0072ce;
+      color: white;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-bottom: 40px;
+    }
+
+    .back-button:hover {
+      background: #0056a3;
+      transform: translateY(-2px);
+    }
+
+    /* SIDEBAR */
+    .sidebar-widget {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 25px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+      border: 1px solid #eee;
+    }
+
+    .sidebar-widget h3 {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #1a1a1a;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #0072ce;
+    }
+
+    .related-articles {
+      list-style: none;
+    }
+
+    .related-articles li {
+      margin-bottom: 12px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .related-articles li:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .related-articles a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+      display: block;
+    }
+
+    .related-articles a:hover {
+      color: #0072ce;
+    }
+
+    .country-fact {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .fact-icon {
+      width: 35px;
+      height: 35px;
+      background: #0072ce;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER ORIGINAL */
+    .rbm-footer {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: white;
+        padding: 50px 20px 30px;
+        margin-top: 60px;
+        border-top: 5px solid #1e3a8a;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .footer-wave {
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 20px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="%231e3a8a"></path></svg>');
+        background-size: 1200px 100%;
+    }
+    
+    .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .footer-logo {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .logo-container {
+        margin-bottom: 15px;
+    }
+    
+    .logo-img {
+        height: 60px;
+        width: auto;
+        filter: brightness(0) invert(1);
+    }
+    
+    .footer-slogan {
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 20px;
+        font-style: italic;
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+    }
+    
+    .social-icon:hover {
+        background-color: #3b82f6;
+        transform: translateY(-3px);
+    }
+    
+    .footer-section h3 {
+        color: #3b82f6;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+    }
+    
+    .footer-section h3::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 50px;
+        height: 2px;
+        background-color: #3b82f6;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+        color: #ccc;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+    
+    .footer-links a:hover {
+        color: white;
+        padding-left: 5px;
+    }
+    
+    .footer-links a::before {
+        content: '▶';
+        color: #3b82f6;
+        margin-right: 8px;
+        font-size: 0.7rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover::before {
+        margin-right: 12px;
+    }
+    
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: #ccc;
+    }
+    
+    .contact-icon {
+        width: 35px;
+        height: 35px;
+        background-color: #3b82f6;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        margin-top: 15px;
+    }
+    
+    .newsletter-input {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        border-radius: 4px 0 0 4px;
+        background-color: #333;
+        color: white;
+    }
+    
+    .newsletter-input::placeholder {
+        color: #999;
+    }
+    
+    .newsletter-button {
+        background-color: #3b82f6;
+        color: white;
+        border: none;
+        padding: 0 20px;
+        border-radius: 0 4px 4px 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: bold;
+    }
+    
+    .newsletter-button:hover {
+        background-color: #1e3a8a;
+    }
+    
+    .footer-bottom {
+        max-width: 1200px;
+        margin: 40px auto 0;
+        padding-top: 20px;
+        border-top: 1px solid #444;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .copyright {
+        color: #999;
+        font-size: 0.9rem;
+    }
+    
+    .footer-bottom-links {
+        display: flex;
+        gap: 20px;
+    }
+    
+    .footer-bottom-links a {
+        color: #999;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-bottom-links a:hover {
+        color: #3b82f6;
+    }
+    
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 968px) {
+      .article-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .sidebar {
+        grid-column: 1;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      nav ul {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        flex-direction: column;
+        background: #fff;
+        width: 260px;
+        height: 100vh;
+        padding-top: 80px;
+        gap: 0;
+        transition: 0.4s ease-in-out;
+        box-shadow: -2px 0 8px rgba(0,0,0,0.2);
+        overflow-y: auto;
+      }
+      nav ul.active { right: 0; }
+
+      nav ul li { width: 100%; border-bottom: 1px solid #eee; }
+      nav ul li a {
+        font-size: 18px;
+        padding: 14px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      nav ul li a:hover { background: #0072ce; color: #fff; }
+
+      .hamburger { display: flex; }
+      
+      .container {
+        margin: 20px auto;
+      }
+      
+      .article-title {
+        font-size: 1.8rem;
+      }
+      
+      .article-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .article-image {
+        height: 250px;
+      }
+      
+      .article-meta {
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+      }
+      
+      .footer-logo {
+          align-items: center;
+      }
+      
+      .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+      }
+      
+      .newsletter-form {
+          flex-direction: column;
+      }
+      
+      .newsletter-input {
+          border-radius: 4px;
+          margin-bottom: 10px;
+      }
+      
+      .newsletter-button {
+          border-radius: 4px;
+          padding: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="../../../../../index.html"><img src="01.svg" alt="Logo Notícias"></a>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="../../../../../index.html">Início</a></li>
+        <li><a href="../../politica.html">Política</a></li>
+        <li><a href="#">Opinião</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </nav>
+
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <div></div><div></div><div></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <a href="../../paginas/materias/internacional/internacional.html" class="back-button">← Voltar para Notícias</a>
+    
+    <article>
+      <div class="article-header">
+        <span class="news-category">Chile</span>
+        <h1 class="article-title">Como segurança virou tema central em eleição no Chile</h1>
+        <p class="article-subtitle">Mesmo com criminalidade considerada baixa em comparação regional, tema domina debate eleitoral e redefine prioridades políticas no país</p>
+        
+        <div class="article-meta">
+          <div class="meta-item">
+            <img src="imagens/authors/autor4.jpg" alt="Isabela Fernandez" class="author-img">
+            <div>
+              <strong>Isabela Fernandez</strong>
+              <div>Correspondente no Chile</div>
+            </div>
+          </div>
+          <div class="meta-item">
+            <span>📅 18 de Janeiro, 2025</span>
+          </div>
+          <div class="meta-item">
+            <span>⏱️ 8 min de leitura</span>
+          </div>
+        </div>
+      </div>
+      
+      <img src="../../imagens/local/02.png" alt="Manifestação sobre segurança no Chile" class="article-image">
+      <p class="image-caption">Protestos em Santiago refletem preocupação crescente com segurança pública, tornando-se tema central nas eleições chilenas</p>
+      
+      <div class="article-content">
+        <div class="main-content">
+          <p>O Chile, tradicionalmente considerado um dos países mais seguros da América Latina, vive um paradoxo político: a segurança pública tornou-se o tema central das eleições presidenciais e parlamentares de 2025, mesmo mantendo índices de criminalidade inferiores aos de seus vizinhos regionais.</p>
+          
+          <p>A percepção de insegurança entre a população chilena cresceu 42% nos últimos três anos, segundo pesquisa do Centro de Estudos Públicos (CEP), transformando um tema antes periférico em eixo central do debate político. Especialistas apontam que a "revolução das expectativas" explica parte deste fenômeno.</p>
+          
+          <div class="highlight-box">
+            <h3>Dados da Criminalidade no Chile</h3>
+            <p>Enquanto a taxa de homicídios no Chile é de 4,5 por 100 mil habitantes (a mais baixa da América do Sul), pesquisas mostram que 78% dos chilenos acreditam que a criminalidade aumentou significativamente nos últimos anos.</p>
+          </div>
+          
+          <h2>A Ascensão do Tema Segurança</h2>
+          
+          <p>Até 2019, as discussões políticas no Chile giravam em torno de reformas estruturais, educação gratuita e sistema de previdência. O estallido social daquele ano, seguido pela pandemia, criou um terreno fértil para que a segurança emergisse como preocupação central.</p>
+          
+          <p>"O Chile passou por transformações sociais profundas. A combinação de migração em larga escala, crise econômica pós-pandemia e descontentamento com instituições criou um caldo de cultura onde a segurança se tornou a principal demanda", analisa o sociólogo Fernando Torres, da Universidade do Chile.</p>
+          
+          <div class="stats-grid">
+            <div class="stat-item">
+              <div class="stat-value">78%</div>
+              <div class="stat-label">acreditam que criminalidade piorou</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">42%</div>
+              <div class="stat-label">crescimento na percepção de insegurança</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">4,5</div>
+              <div class="stat-label">homicídios por 100 mil habitantes</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-value">1º</div>
+              <div class="stat-label">lugar como preocupação eleitoral</div>
+            </div>
+          </div>
+          
+          <h2>Fenômeno da Migração e Segurança</h2>
+          
+          <p>O aumento significativo da migração, especialmente da Venezuela, Colômbia e Haiti, tornou-se um elemento central no debate sobre segurança. Embora estudos mostrem que imigrantes cometem crimes na mesma proporção que chilenos, a associação entre migração e criminalidade ganhou força no discurso político.</p>
+          
+          <p>"Há uma criminalização da migração que é explorada eleitoralmente. Os dados não sustentam a narrativa de que imigrantes são responsáveis pelo aumento da criminalidade, mas a percepção se sobrepõe à realidade estatística", explica a pesquisadora em segurança pública, Camila Rojas.</p>
+          
+          <div class="quote">
+            "Quando as pessoas não se sentem seguras para caminhar em seus bairros à noite, as estatísticas pouco importam. Estamos respondendo a uma demanda legítima da população por maior proteção."
+            <div class="quote-author">— Carlos Bianchi, candidato presidencial</div>
+          </div>
+          
+          <h2>Respostas Políticas</h2>
+          
+          <p>Diante da centralidade do tema, candidatos de diferentes espectros políticos apresentaram propostas para enfrentar a questão:</p>
+          
+          <h3>Direita e Centro-Direita</h3>
+          <p>Defendem fortalecimento policial, aumento de penas, controle mais rigoroso de migração e maior uso de tecnologia de vigilância. Alguns propõem reformas no sistema de justiça para agilizar processos criminais.</p>
+          
+          <h3>Esquerda e Centro-Esquerda</h3>
+          <p>Advogam por políticas de prevenção social, combate às desigualdades, reforma do sistema carcerário e abordagem dos fatores socioeconômicos que levam ao crime. Criticam propostas de endurecimento penal como "populismo punitivo".</p>
+          
+          <h2>Impacto nas Eleições</h2>
+          
+          <p>Analistas políticos apontam que a centralidade do tema segurança redefiniu as alianças políticas no Chile:</p>
+          
+          <p><strong>Mudança de Agenda:</strong> Temas tradicionais da esquerda chilena, como reforma previdenciária e educacional, foram relegados a segundo plano.</p>
+          
+          <p><strong>Novas Alianças:</strong> Candidatos que conseguem articular discursos convincentes sobre segurança ganham espaço, independentemente de sua posição no espectro político tradicional.</p>
+          
+          <p><strong>Regionalização do Voto:</strong> O tema tem impacto diferente em diversas regiões do país, com preocupações específicas em áreas fronteiriças, zonas urbanas e regiões com alta concentração de imigrantes.</p>
+          
+          <h2>Contexto Regional</h2>
+          
+          <p>O fenômeno chileno reflete uma tendência mais ampla na América Latina, onde a segurança se tornou questão central mesmo em países com indicadores relativamente bons:</p>
+          
+          <p><strong>Uruguai:</strong> Também com baixos índices de criminalidade, viu a segurança se tornar tema eleitoral importante.</p>
+          
+          <p><strong>Costa Rica:</strong> Tradicionalmente estável e pacífica, enfrenta debate crescente sobre segurança pública.</p>
+          
+          <p><strong>Panamá:</strong> Apesar de indicadores positivos, a percepção de insegurança influencia decisões políticas.</p>
+          
+          <h2>Perspectivas Futuras</h2>
+          
+          <p>Especialistas apontam que, independentemente do resultado eleitoral, a segurança continuará como tema central na política chilena pelos próximos anos:</p>
+          
+          <p>"O Chile está passando por uma redefinição de suas prioridades nacionais. A segurança se juntou à educação e saúde como demandas fundamentais da população. Qualquer governo terá que apresentar resultados concretos nesta área", avalia o cientista político Rodrigo Medina.</p>
+          
+          <p>O desafio para o próximo governo será conciliar respostas efetivas à demanda por segurança com a preservação de direitos humanos e o enfrentamento das causas estruturais da criminalidade, em um contexto de expectativas elevadas e recursos limitados.</p>
+        </div>
+        
+        <div class="sidebar">
+          <div class="sidebar-widget">
+            <h3>Chile em Números</h3>
+            <div class="country-fact">
+              <div class="fact-icon">👥</div>
+              <div>
+                <strong>População</strong>
+                <div>19,5 milhões</div>
+              </div>
+            </div>
+            <div class="country-fact">
+              <div class="fact-icon">📊</div>
+              <div>
+                <strong>Taxa de Homicídios</strong>
+                <div>4,5/100 mil hab.</div>
+              </div>
+            </div>
+            <div class="country-fact">
+              <div class="fact-icon">🗳️</div>
+              <div>
+                <strong>Próximas Eleições</strong>
+                <div>Novembro 2025</div>
+              </div>
+            </div>
+            <div class="country-fact">
+              <div class="fact-icon">🚔</div>
+              <div>
+                <strong>Carabineros</strong>
+                <div>48.000 policiais</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="sidebar-widget">
+            <h3>Matérias Relacionadas</h3>
+            <ul class="related-articles">
+              <li><a href="#">Argentina: Impacto da política econômica de Milei nas eleições regionais</a></li>
+              <li><a href="#">Brasil e Chile ampliam cooperação em segurança fronteiriça</a></li>
+              <li><a href="#">Como o tema migração influencia eleições na América Latina</a></li>
+              <li><a href="#">Perfil: Os principais candidatos à presidência do Chile</a></li>
+              <li><a href="#">Análise: O que esperar do pleito chileno de 2025</a></li>
+            </ul>
+          </div>
+          
+          <div class="sidebar-widget">
+            <h3>Comparativo Regional</h3>
+            <p>Taxas de homicídio por 100 mil habitantes (2024):</p>
+            <ul class="related-articles">
+              <li><a href="#">Chile: 4,5</a></li>
+              <li><a href="#">Argentina: 5,2</a></li>
+              <li><a href="#">Uruguai: 8,1</a></li>
+              <li><a href="#">Brasil: 22,8</a></li>
+              <li><a href="#">Colômbia: 25,0</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="article-tags">
+        <span class="tag">Chile</span>
+        <span class="tag">Eleições</span>
+        <span class="tag">Segurança Pública</span>
+        <span class="tag">América Latina</span>
+        <span class="tag">Política</span>
+        <span class="tag">Migração</span>
+      </div>
+    </article>
+  </main>
+
+  <footer class="rbm-footer">
+    <div class="footer-wave"></div>
+    <div class="footer-container">
+        <div class="footer-logo">
+            <div class="logo-container">
+                <img src="01.svg" alt="Logo Notícias" class="logo-img">
+            </div>
+            <p class="footer-slogan">Informação confiável sobre política brasileira</p>
+            <div class="social-icons">
+                <a href="#" class="social-icon">f</a>
+                <a href="#" class="social-icon">in</a>
+                <a href="#" class="social-icon">t</a>
+                <a href="#" class="social-icon">you</a>
+                <a href="#" class="social-icon">ig</a>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Política</h3>
+            <ul class="footer-links">
+                <li><a href="../../politica.html">Política Nacional</a></li>
+                <li><a href="../../politica.html">Congresso</a></li>
+                <li><a href="../../politica.html">Eleições</a></li>
+                <li><a href="../../politica.html">Partidos</a></li>
+                <li><a href="../../politica.html">Política Externa</a></li>
+                <li><a href="../../politica.html">Justiça</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Institucional</h3>
+            <ul class="footer-links">
+                <li><a href="#">Sobre Nós</a></li>
+                <li><a href="#">Nossa História</a></li>
+                <li><a href="#">Equipe</a></li>
+                <li><a href="#">Trabalhe Conosco</a></li>
+                <li><a href="#">Ética Jornalística</a></li>
+                <li><a href="#">Publicidade</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <span>(11) 3456-7890</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">✉</div>
+                    <span>contato@noticias.com.br</span>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <span>Av. Paulista, 1000 - São Paulo/SP</span>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 25px;">Newsletter</h3>
+            <p style="color: #ccc; margin-bottom: 10px; font-size: 0.9rem;">Receba as notícias em primeira mão</p>
+            <form class="newsletter-form">
+                <input type="email" class="newsletter-input" placeholder="Seu e-mail">
+                <button type="submit" class="newsletter-button">Assinar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <div class="copyright">
+            &copy; 2025 D'LA 20 - BR. Todos os direitos reservados.
+        </div>
+        <div class="footer-bottom-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Mapa do Site</a>
+        </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu(el) {
+      el.classList.toggle("active");
+      document.querySelector("nav ul").classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
