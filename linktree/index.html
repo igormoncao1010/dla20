@@ -1,161 +1,406 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>D'LA 20</title>
-  <style>
-    :root {
-      --cor-principal: #00994d;
-      --cor-texto: #222;
-      --cor-clara: #f5f5f5;
-      --borda: #e5e5e5;
-      --radius: 14px;
-      --fonte: 'Poppins', Arial, sans-serif;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D'LA 20 - Fórum Internacional da Democracia Latino-Americana</title>
+    <style>
+        :root {
+            --white: #ffffff;
+            --light: #f8f9fa;
+            --gray: #e9ecef;
+            --dark: #212529;
+            --blue: #0066cc;
+            --accent: #0052a3;
+            --border: #dee2e6;
+            --text-muted: #6c757d;
+        }
 
-    body {
-      font-family: var(--fonte);
-      background: #fff;
-      color: var(--cor-texto);
-      text-align: center;
-      margin: 0;
-      padding: 40px 20px;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
 
-    .container {
-      max-width: 420px;
-      margin: auto;
-    }
+        body {
+            background: var(--light);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
 
-    .logo {
-      width: 110px;
-      margin-bottom: 20px;
-    }
+        /* CARD PRINCIPAL */
+        .container {
+            width: 100%;
+            max-width: 450px;
+            background: var(--white);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
 
-    h1 {
-      font-size: 1.2em;
-      font-weight: 600;
-      color: #000;
-      margin-bottom: 30px;
-      line-height: 1.4;
-    }
+        /* CABEÇALHO */
+        .header {
+            padding: 35px 30px 25px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+            background: var(--white);
+        }
 
-    .destaque {
-      border-radius: var(--radius);
-      overflow: hidden;
-      background: var(--cor-clara);
-      border: 1px solid var(--borda);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      margin-bottom: 25px;
-      transition: 0.25s ease;
-    }
+        .logo {
+            width: auto;
+            height: auto;
+            margin: 0 auto 20px;
+            display: block;
+        }
 
-    .destaque:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-    }
+        .logo img {
+            width: 220px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
 
-    .destaque img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+        /* CONTEÚDO PRINCIPAL */
+        .main-content {
+            padding: 30px;
+        }
 
-    .destaque-content {
-      padding: 18px 20px;
-      text-align: left;
-    }
+        /* VÍDEO */
+        .video-container {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 25px;
+            background: #000;
+        }
 
-    .destaque-content h2 {
-      font-size: 1em;
-      margin-bottom: 6px;
-      color: #000;
-    }
+        video {
+            width: 100%;
+            display: block;
+        }
 
-    .destaque-content p {
-      font-size: 0.9em;
-      color: #555;
-      margin-bottom: 12px;
-    }
+        /* DESCRIÇÃO */
+        .description {
+            margin-bottom: 25px;
+        }
 
-    .destaque-content a {
-      display: inline-block;
-      text-decoration: none;
-      color: #fff;
-      background: var(--cor-principal);
-      padding: 10px 16px;
-      border-radius: 8px;
-      font-weight: 500;
-      font-size: 0.9em;
-      transition: background 0.2s;
-    }
+        .description p {
+            text-align: justify;
+            color: var(--dark);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-    .destaque-content a:hover {
-      background: #007a3d;
-    }
+        .highlight {
+            color: var(--blue);
+            font-weight: 500;
+        }
 
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
+        /* SEÇÃO FERNANDO MANHOLÉR */
+        .fernando-section {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+            margin: 20px 0;
+            padding: 15px;
+            background: var(--light);
+            border-radius: 12px;
+            border-left: 4px solid var(--blue);
+        }
 
-    .links a {
-      display: block;
-      background: #fafafa;
-      border: 1px solid var(--borda);
-      border-radius: var(--radius);
-      padding: 14px;
-      color: #000;
-      font-weight: 500;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
+        .fernando-foto {
+            flex-shrink: 0;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .links a:hover {
-      background: var(--cor-principal);
-      color: #fff;
-      border-color: var(--cor-principal);
-      transform: translateY(-2px);
-    }
+        .fernando-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-    footer {
-      margin-top: 35px;
-      font-size: 0.8em;
-      color: #888;
-    }
+        .fernando-text {
+            flex: 1;
+        }
 
-    @media (max-width: 480px) {
-      body { padding: 30px 15px; }
-      h1 { font-size: 1.1em; }
-      .destaque-content h2 { font-size: 0.95em; }
-    }
-  </style>
+        .fernando-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .fernando-desc {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        /* PRÊMIO */
+        .premio-box {
+            background: var(--light);
+            border-radius: 10px;
+            padding: 18px;
+            margin: 20px 0;
+            border-left: 4px solid var(--blue);
+        }
+
+        .premio-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .premio-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-muted);
+            text-align: justify;
+        }
+
+        /* BOTÕES */
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 25px;
+        }
+
+        .btn {
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            opacity: 0.95;
+        }
+
+        .btn:active {
+            transform: translateY(0);
+        }
+
+        .btn-youtube {
+            background: #FF0000;
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #405DE6, #C13584, #FD1D1D, #F56040, #F77737, #FFDC80);
+        }
+
+        .btn-tiktok {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .btn-facebook {
+            background: #1877F2;
+        }
+
+        .btn-site {
+            background: var(--blue);
+        }
+
+        .btn-icon {
+            font-size: 18px;
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 25px 30px;
+            background: var(--light);
+            border-top: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .footer-logo {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-logo img {
+            width: 100px;
+            opacity: 0.7;
+        }
+
+        .copyright {
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+            
+            .container {
+                border-radius: 16px;
+            }
+            
+            .header, .main-content, .footer {
+                padding: 20px;
+            }
+            
+            .header {
+                padding-top: 25px;
+                padding-bottom: 20px;
+            }
+            
+            .logo img {
+                width: 150px;
+            }
+            
+            .fernando-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .fernando-foto {
+                width: 100px;
+                height: 100px;
+            }
+            
+            .fernando-desc {
+                text-align: center;
+            }
+            
+            .buttons {
+                gap: 10px;
+            }
+            
+            .btn {
+                padding: 13px;
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <img src="imagens/logos/01.png" alt="TV RBM" class="logo" />
-    <h1>D'LA 20 - NOTÍCIAS DA AMÉRICA LATINA</h1>
 
-    <div class="destaque">
-      <img src="../paginas/materias/politica/todas/rombo-fgc/fgc.webp" alt="Matéria em destaque" />
-      <div class="destaque-content">
-        <h2>Rombo bilionário no FGC com compra do Banco Master pelo BRB</h2>
-        <p>Uma operação que deveria representar o resgate de uma instituição financeira em dificuldades transformou-se em uma bomba-relógio para o sistema bancário brasileiro. A aquisição do Banco Master pelo BRB, aprovada pelo Banco Central em dezembro de 2024, expõe o FGC a um rombo potencial de R$ 9,3 bilhões - valor que supera em mais de 40% o capital total disponível no fundo para garantir operações de instituições em situação crítica.</p>
-        <a href="../paginas/materias/politica/todas/rombo-fgc/rombo-fgc.html">Ler matéria completa</a>
-      </div>
+<div class="container">
+    <!-- CABEÇALHO -->
+    <div class="header">
+        <div class="logo">
+            <img src="imagens/logos/02.svg" alt="Logo D'LA 20">
+        </div>
     </div>
 
-    <div class="links">
+    <!-- CONTEÚDO PRINCIPAL -->
+    <div class="main-content">
+        <!-- VÍDEO -->
+        <div class="video-container">
+            <video src="imagens/video/01.mp4" controls></video>
+        </div>
 
+        <!-- DESCRIÇÃO -->
+        <div class="description">
+            <p>
+                O <span class="highlight">D'LA 20 - Fórum Internacional da Democracia Latino-Americana</span> 
+                é uma plataforma de diálogo e cooperação que reúne líderes, especialistas e instituições 
+                comprometidas com o fortalecimento democrático na América Latina. Através de debates 
+                construtivos e trocas de experiências, o fórum busca fortalecer as instituições democráticas 
+                e promover o desenvolvimento sustentável na região.
+            </p>
 
-      <a href="https://www.instagram.com/dla2o/" target="_blank">Instagram</a>
-      <a href="https://www.youtube.com/@DLA20-OFFICIAL" target="_blank">Youtube</a>
-      <a href="https://dla20.vercel.app/" target="_blank">Site Oficial</a>
+            <!-- SEÇÃO FERNANDO MANHOLÉR -->
+            <div class="fernando-section">
+                <div class="fernando-foto">
+                    <img src="imagens/logos/002.png" alt="Fernando Manholér">
+                </div>
+                <div class="fernando-text">
+                    <div class="fernando-title">Fernando Manholér</div>
+                    <p class="fernando-desc">
+                        Presidente do D'LA 20, Fernando Manholér lidera o fórum promovendo discussões 
+                        estratégicas sobre governança, direitos humanos e desenvolvimento sustentável 
+                        na região latino-americana. Com vasta experiência em diplomacia e relações 
+                        internacionais, sua liderança tem sido fundamental para o sucesso do fórum.
+                    </p>
+                </div>
+            </div>
+
+            <!-- PRÊMIO -->
+            <div class="premio-box">
+                <div class="premio-title">🏆 Reconhecimento Oficial</div>
+                <p class="premio-text">
+                    Fernando Manholér foi recentemente premiado pela Câmara Municipal de São Paulo em 
+                    reconhecimento às suas relevantes contribuições para o debate democrático e 
+                    à integração latino-americana. O prêmio destaca o compromisso do fórum com a 
+                    promoção da democracia e dos direitos humanos em toda a América Latina.
+                </p>
+            </div>
+        </div>
+
+        <!-- BOTÕES ATUALIZADOS -->
+        <div class="buttons">
+            <a class="btn btn-youtube" href="https://www.youtube.com/@DLA20-OFFICIAL" target="_blank">
+                <span class="btn-icon"></span> YouTube
+            </a>
+            <a class="btn btn-instagram" href="https://www.instagram.com/dla2o/" target="_blank">
+                <span class="btn-icon"></span> Instagram
+            </a>
+            <a class="btn btn-tiktok" href="https://www.tiktok.com/@dla20official?_r=1&_t=ZS-91jIGf3bBnW" target="_blank">
+                <span class="btn-icon"></span> TikTok
+            </a>
+            <a class="btn btn-facebook" href="https://www.facebook.com/share/1B81oaJUKG/?mibextid=wwXIfr" target="_blank">
+                <span class="btn-icon"></span> Facebook
+            </a>
+            <a class="btn btn-site" href="https://dla20.vercel.app/" target="_blank">
+                <span class="btn-icon"></span> Site Oficial
+            </a>
+        </div>
     </div>
 
-    <footer>© 2025 D'LA 20 — A voz da América Latina</footer>
-  </div>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="imagens/logos/02.svg" alt="Logo D'LA 20">
+        </div>
+        <div class="copyright">
+            © 2025 D'LA 20 - Fórum Internacional da Democracia Latino-Americana<br>
+            Todos os direitos reservados. São Paulo - Brasil
+        </div>
+    </footer>
+</div>
+
 </body>
 </html>
